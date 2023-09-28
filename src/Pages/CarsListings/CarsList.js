@@ -21,6 +21,7 @@ export default function CarsList({ heading }) {
       setList(filteredData);
     }
   }, [heading]);
+
   return (
     <>
       {list.map((item, index) => (
@@ -34,43 +35,56 @@ export default function CarsList({ heading }) {
             marginBottom: 3,
           }}
         >
-          <Grid container m={2}>
-            <Grid md={2} xs={12}>
+          <Grid container spacing={2} m={2} alignItems="cnter">
+            <Grid md={2} xs={10} justifyContent="center">
               <img
                 src={require(`../../assets/list.jpg`)}
                 alt="Logo"
                 style={{
-                  width: 160,
-                  alignItems: "center",
-                  marginLeft: isMobile ? "2rem" : 0,
+                  width: isMobile ? "100%" : 160,
+                  height: "100%",
                 }}
               />
             </Grid>
-            <Grid item md={6} xs={12} pl={4}>
+            <Grid item md={6} xs={6} justifyContent="center">
               <Typography variant="h6" fontWeight="bold">
                 {item.name}
               </Typography>
               <Grid container spacing={2}>
-                <Grid item>
+                <Grid item xs={4}>
                   <CalendarMonthIcon sx={{ height: "15px" }} /> {item.year}
                 </Grid>
-                <Grid item>
+                <Grid item xs={4}>
                   <SpeedIcon sx={{ height: "15px" }} />
                   {item.mileage}
                 </Grid>
-                <Grid item>
+                <Grid item xs={4}>
                   <LocationOnIcon sx={{ height: "15px" }} />
                   {item.country}
                 </Grid>
               </Grid>
               <Grid container spacing={2}>
-                <Grid item>{item.fuel} </Grid>
-                <Grid item>{item.cc}</Grid>
-                <Grid item>{item.transmission}</Grid>
+                <Grid item xs={4}>
+                  {item.fuel}
+                </Grid>
+                <Grid item xs={4}>
+                  {item.cc}
+                </Grid>
+                <Grid item xs={4}>
+                  {item.transmission}
+                </Grid>
               </Grid>
               <Typography>Last Updated: {item.date}</Typography>
             </Grid>
-            <Grid item md={4} xs={12} textAlign="right" pr={6} mt={2}>
+            <Grid
+              item
+              md={4}
+              xs={6}
+              textAlign="right"
+              pr={isMobile ? 5 : 6}
+              alignItems="center"
+              mt={2}
+            >
               <Typography variant="h6" fontWeight="bold" mb={1}>
                 {item.price}
               </Typography>

@@ -3,9 +3,15 @@ import React, { useState } from "react";
 import bg from "../../assets/bg.png";
 import DropdownCountry from "../../Components/DropdownCountry";
 import DropdownPrice from "../../Components/DropdownPrice";
+import { useIsMobile } from "../../contexts/isMobile";
+import { useTheme } from "@mui/material/styles";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 export default function FindCars() {
   const bgImg = `url(${bg})`;
+  const theme = useTheme();
+  const matches = useMediaQuery(theme.breakpoints.up("sm"));
+  console.log(matches, "matches");
   const [form, setForm] = useState({
     country: "",
     price: "",
@@ -65,7 +71,7 @@ export default function FindCars() {
           <Grid item xs={10} md={2}>
             <DropdownCountry {...{ form, setForm }} />
           </Grid>
-          <Grid item md={3} xs={10} justifyContent="center">
+          <Grid item md={3} xs={10} textAlign={!matches && "center"}>
             <Button
               size="small"
               variant="contained"
@@ -75,7 +81,6 @@ export default function FindCars() {
                 width: "8rem",
                 borderRadius: "0.5rem",
                 color: "white",
-                marginRight: "10px",
                 fontFamily: "Semibold",
               }}
               onClick={""}

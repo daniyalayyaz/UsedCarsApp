@@ -1,21 +1,37 @@
 import { Grid, Typography } from "@mui/material";
 import React from "react";
 import img from "../../assets/leadingimg.png";
+import { useIsMobile } from "../../contexts/isMobile";
 
 export default function LeadingCars() {
+  const isMobile = useIsMobile();
   return (
     <>
       <Grid container justifyContent="center" mb={4}>
         <Grid item md={6} xs={12}>
-          <img src={img} style={{ width: "40rem", height: "30rem" }} alt="" />
+          <img
+            src={img}
+            style={{ width: isMobile ? "100%" : "40rem", height: "32rem" }}
+            alt=""
+          />
         </Grid>
         <Grid item md={6} xs={12} bgcolor="aliceblue">
-          <div style={{ marginLeft: "4rem", marginTop: "2rem" }}>
+          <div
+            style={{
+              marginLeft: isMobile ? "2rem" : "4rem",
+              marginTop: "2rem",
+              marginBottom: "2rem",
+            }}
+          >
             <Typography variant="h6">WORLD'S LEADING USED CARS</Typography>
             <Typography variant="h4" color="primary" mb={2}>
               WELCOME TO AUTO CAR
             </Typography>
-            <Typography variant="body1" pr={"8rem"} lineHeight={1.5}>
+            <Typography
+              variant="body1"
+              pr={isMobile ? "2rem" : "8rem"}
+              lineHeight={1.5}
+            >
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
               sapien metus, consectetur et efficitur ut, mattis et nisl. Etiam
               aliquet erat lorem, sed rhoncus justo hendrerit ac. Donec vel

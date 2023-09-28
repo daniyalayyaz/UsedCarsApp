@@ -11,7 +11,7 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 export default function FAQAccordian() {
   return (
-    <Container sx={{ mx: 4, my: 6 }}>
+    <Container sx={{ my: 6 }}>
       <Typography variant="h3" textAlign="center" mb={4}>
         FAQs
       </Typography>

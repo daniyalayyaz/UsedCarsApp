@@ -10,7 +10,6 @@ export default function CustomerReviewCard() {
         textAlign: "center",
         width: "100%",
         my: "2rem",
-        mx: "2rem",
         border: "4px",
       }}
     >

@@ -1,7 +1,9 @@
 import { Box, Button, Grid, Stack, Typography } from "@mui/material";
 import React from "react";
+import { useIsMobile } from "../../contexts/isMobile";
 
 export default function GetStartedToday() {
+  const isMobile = useIsMobile();
   return (
     <Stack
       direction="row"
@@ -11,8 +13,8 @@ export default function GetStartedToday() {
         backgroundSize: "cover",
         backgroundPosition: "center",
         width: "100%",
-        height: "300px",
-        mb: 3,
+        height: "100%",
+        my: 3,
       }}
     >
       <Box
@@ -21,7 +23,7 @@ export default function GetStartedToday() {
           flexDirection: "column",
           textAlign: "center",
           width: "70%",
-          mt: "4rem",
+          my: "2rem",
         }}
       >
         <Typography variant="h4">Get Started Today</Typography>
@@ -30,8 +32,8 @@ export default function GetStartedToday() {
           aliquet, massa ac ornare feugiat, nunc dui auctor ipsum, sed posuere
           eros sapien id quam.
         </Typography>
-        <Grid container mt={2} justifyContent="center">
-          <Grid item md={6}>
+        <Grid container mt={2} spacing={2} justifyContent="center">
+          <Grid item md={6} xs={12}>
             <Button
               size="large"
               variant="contained"
@@ -47,7 +49,7 @@ export default function GetStartedToday() {
               Do you want to buy a Japense Car?
             </Button>
           </Grid>
-          <Grid item md={6}>
+          <Grid item md={6} xs={12}>
             <Button
               size="large"
               variant="contained"

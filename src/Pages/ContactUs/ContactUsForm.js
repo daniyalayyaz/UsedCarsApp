@@ -11,8 +11,8 @@ export default function ContactUsForm() {
           margin: "2rem",
         }}
       >
-        <Grid container spacing={2}>
-          <Grid item md={6}>
+        <Grid container spacing={2} justifyContent="center">
+          <Grid item md={6} xs={12}>
             <TextField
               margin="normal"
               fullWidth
@@ -20,7 +20,7 @@ export default function ContactUsForm() {
               name="fullname"
             />
           </Grid>
-          <Grid item md={6}>
+          <Grid item md={6} xs={12}>
             <TextField
               margin="normal"
               fullWidth
@@ -28,10 +28,10 @@ export default function ContactUsForm() {
               name="phone"
             />
           </Grid>
-          <Grid item md={6}>
+          <Grid item md={6} xs={12}>
             <TextField margin="normal" fullWidth label="Email" name="email" />
           </Grid>
-          <Grid item md={6}>
+          <Grid item md={6} xs={12}>
             <TextField
               margin="normal"
               fullWidth
@@ -39,7 +39,7 @@ export default function ContactUsForm() {
               name="address"
             />
           </Grid>
-          <Grid item md={12}>
+          <Grid item md={12} xs={12}>
             <TextField
               margin="normal"
               fullWidth
@@ -51,7 +51,7 @@ export default function ContactUsForm() {
             />
           </Grid>
         </Grid>
-        <Grid item md={12} mt={2}>
+        <Grid item md={12} mt={2} xs={12} textAlign="center">
           <Button
             size="small"
             variant="contained"

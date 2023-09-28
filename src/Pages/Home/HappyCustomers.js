@@ -21,7 +21,7 @@ export default function HappyCustomers() {
           flexDirection: "column",
           textAlign: "center",
           width: "80%",
-          mt: "4rem",
+          my: "2rem",
         }}
       >
         <Typography variant="h4">Happy Customers</Typography>

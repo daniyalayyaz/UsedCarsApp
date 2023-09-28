@@ -28,10 +28,10 @@ export default function CarDetailIndex() {
           <DetailHeader name={data.name} />
           <Container>
             <Grid container my={4}>
-              <Grid item md={8}>
+              <Grid item md={8} xs={12}>
                 <CarDetails data={data} />
               </Grid>
-              <Grid item md={4}>
+              <Grid item md={4} xs={12}>
                 <PriceCard price={data.price} country={data.country} />
                 <ContactSeller />
               </Grid>

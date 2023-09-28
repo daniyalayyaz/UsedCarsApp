@@ -1,12 +1,14 @@
 import { AppBar, Grid, Toolbar, Typography } from "@mui/material";
-import React, { useState } from "react";
+import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import logo from "../../assets/logo.png";
 import { SolidButton } from "../SolidButton";
-import ListingHeader from "../../Pages/CarsListings/ListingHeader";
+import { useIsMobile } from "../../contexts/isMobile";
+import DropdownButton from "./DropdownButton";
 
-export default function Navbar({ heading, setHeading }) {
+export default function Navbar({ setHeading }) {
   const navigate = useNavigate();
+  const isMobile = useIsMobile();
   const handleHome = () => {
     navigate("/");
   };
@@ -46,36 +48,43 @@ export default function Navbar({ heading, setHeading }) {
           </div>
 
           {/* Right side */}
-          <div style={{ marginLeft: "auto" }}>
-            <Grid container>
-              <>
-                <Grid>
-                  <SolidButton label="Home" onClick={handleHome} />
-                </Grid>
-                <Grid>
-                  <SolidButton label="About Us" onClick={handleAbout} />
-                </Grid>
-                <Grid>
-                  <SolidButton
-                    label="Japeense Cars"
-                    onClick={() => handleJapenseCars("Japan")}
-                  />
-                </Grid>
-                <Grid>
-                  <SolidButton
-                    label="UK Cars"
-                    onClick={() => handleUKCars("UK")}
-                  />
-                </Grid>
-                <Grid>
-                  <SolidButton label="FAQs" onClick={handleFaqs} />
-                </Grid>
-                <Grid>
-                  <SolidButton label="Contact Us" onClick={handleContact} />
-                </Grid>
-              </>
-            </Grid>
-          </div>
+
+          {isMobile ? (
+            <div div style={{ marginLeft: "auto" }}>
+              <DropdownButton {...{ setHeading }} />
+            </div>
+          ) : (
+            <div style={{ marginLeft: "auto" }}>
+              <Grid container>
+                <>
+                  <Grid>
+                    <SolidButton label="Home" onClick={handleHome} />
+                  </Grid>
+                  <Grid>
+                    <SolidButton label="About Us" onClick={handleAbout} />
+                  </Grid>
+                  <Grid>
+                    <SolidButton
+                      label="Japense Cars"
+                      onClick={() => handleJapenseCars("Japan")}
+                    />
+                  </Grid>
+                  <Grid>
+                    <SolidButton
+                      label="UK Cars"
+                      onClick={() => handleUKCars("UK")}
+                    />
+                  </Grid>
+                  <Grid>
+                    <SolidButton label="FAQs" onClick={handleFaqs} />
+                  </Grid>
+                  <Grid>
+                    <SolidButton label="Contact Us" onClick={handleContact} />
+                  </Grid>
+                </>
+              </Grid>
+            </div>
+          )}
         </Toolbar>
       </AppBar>
     </>

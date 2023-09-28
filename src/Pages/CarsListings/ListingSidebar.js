@@ -1,4 +1,4 @@
-import { Box, Stack, Typography } from "@mui/material";
+import { Box, Grid, Stack, Typography } from "@mui/material";
 import React from "react";
 import DropdownMake from "../../Components/DropdownMake";
 import DropdownModel from "../../Components/DropdownModel";
@@ -23,6 +23,7 @@ export default function ListingSidebar() {
         backgroundPosition: "center",
         width: "100%",
         height: "100%",
+        borderRadius: "8px",
       }}
     >
       <Box
@@ -33,53 +34,86 @@ export default function ListingSidebar() {
           my: "1rem",
         }}
       >
-        <Typography variant="body" fontWeight="bold">
-          Make
-        </Typography>
-        <DropdownMake />
-        <Typography variant="body" fontWeight="bold" mt={2}>
-          Model
-        </Typography>
-        <DropdownModel />
-        <Typography variant="body" fontWeight="bold" mt={2}>
-          Body Type
-        </Typography>
-        <DropdownBodyType />
-        <Typography variant="body" fontWeight="bold" mt={2}>
-          Color
-        </Typography>
-        <DropdownColor />
-        <Typography variant="body" fontWeight="bold" mt={2}>
-          Transmission
-        </Typography>
-        <DropdownTransmission />
-        <Typography variant="body" fontWeight="bold" mt={2}>
-          Price Range
-        </Typography>
-        <DropdownPrice />
-        <Typography variant="body" fontWeight="bold" mt={2}>
-          Year
-        </Typography>
-        <DropdownYear />
-        <Typography variant="body" fontWeight="bold" mt={2}>
-          Mileage Range
-        </Typography>
-        <DropdownMileage />
-        <Typography variant="body" fontWeight="bold" mt={2}>
-          CC Range
-        </Typography>
-        <DropdownCC />
-        <Typography variant="body" fontWeight="bold" mt={2}>
-          Steering
-        </Typography>
-        <DropdownSteering />
-        <Typography variant="body" fontWeight="bold" mt={2}>
-          Fuel
-        </Typography>
-        <DropdownFuel />
-        <div style={{ textAlign: "center", marginTop: "1rem" }}>
-          <SolidButton label="Search " />
-        </div>
+        <Grid container spacing={1}>
+          <Grid item md={12} xs={6}>
+            <Typography variant="body" fontWeight="bold">
+              Make
+            </Typography>
+            <DropdownMake />
+          </Grid>
+          <Grid item md={12} xs={6}>
+            <Typography variant="body" fontWeight="bold" mt={2}>
+              Model
+            </Typography>
+            <DropdownModel />
+          </Grid>
+          <Grid item md={12} xs={6}>
+            <Typography variant="body" fontWeight="bold" mt={2}>
+              Body Type
+            </Typography>
+            <DropdownBodyType />
+          </Grid>
+
+          <Grid item md={12} xs={6}>
+            <Typography variant="body" fontWeight="bold" mt={2}>
+              Color
+            </Typography>
+            <DropdownColor />
+          </Grid>
+
+          <Grid item md={12} xs={6}>
+            <Typography variant="body" fontWeight="bold" mt={2}>
+              Transmission
+            </Typography>
+            <DropdownTransmission />
+          </Grid>
+
+          <Grid item md={12} xs={6}>
+            <Typography variant="body" fontWeight="bold" mt={2}>
+              Price Range
+            </Typography>
+            <DropdownPrice />
+          </Grid>
+
+          <Grid item md={12} xs={6}>
+            <Typography variant="body" fontWeight="bold" mt={2}>
+              Year
+            </Typography>
+            <DropdownYear />
+          </Grid>
+
+          <Grid item md={12} xs={6}>
+            <Typography variant="body" fontWeight="bold" mt={2}>
+              Mileage Range
+            </Typography>
+            <DropdownMileage />
+          </Grid>
+
+          <Grid item md={12} xs={6}>
+            <Typography variant="body" fontWeight="bold" mt={2}>
+              CC Range
+            </Typography>
+            <DropdownCC />
+          </Grid>
+
+          <Grid item md={12} xs={6}>
+            <Typography variant="body" fontWeight="bold" mt={2}>
+              Steering
+            </Typography>
+            <DropdownSteering />
+          </Grid>
+
+          <Grid item md={12} xs={6}>
+            <Typography variant="body" fontWeight="bold" mt={2}>
+              Fuel
+            </Typography>
+            <DropdownFuel />
+          </Grid>
+
+          <Grid item md={12} xs={12} textAlign="center" mt="1rem">
+            <SolidButton label="Search " />
+          </Grid>
+        </Grid>
       </Box>
     </Stack>
   );

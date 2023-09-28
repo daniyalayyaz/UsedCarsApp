@@ -16,8 +16,8 @@ export default function InspectionCard() {
       <Typography variant="h6" fontWeight="bold" m={2}>
         Car Inspection is Important Before buy a Used Car
       </Typography>
-      <Grid container spacing={2} m={2}>
-        <Grid item md={6}>
+      <Grid container spacing={2} m={1}>
+        <Grid item md={6} width="90%">
           <Typography>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos sunt
             fugiat iste aperiam numquam similique? Architecto facilis voluptates

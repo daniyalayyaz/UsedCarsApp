@@ -1,11 +1,19 @@
 import { Box, Grid, Paper, Typography } from "@mui/material";
 import React from "react";
 import img from "../../assets//leadingimg.png";
+import { useIsMobile } from "../../contexts/isMobile";
 
 export default function About() {
+  const isMobile = useIsMobile();
   return (
-    <Paper elevation={3} sx={{ mt: 2, bgcolor: "aliceblue" }}>
-      <Grid container justifyContent="center" alignItems="center" spacing={2}>
+    <Paper elevation={3} sx={{ my: 2, bgcolor: "aliceblue" }}>
+      <Grid
+        container
+        justifyContent="center"
+        alignItems="center"
+        spacing={2}
+        my="1rem"
+      >
         <Grid item md={7} xs={12}>
           <Box px={{ xs: 2, md: 8 }} py={5} lineHeight={1.5}>
             <Typography variant="h3">Our Perfect Platform</Typography>
@@ -36,7 +44,11 @@ export default function About() {
           </Box>
         </Grid>
         <Grid item md={5} xs={12}>
-          <img src={img} style={{ width: "90%", height: "20rem" }} alt="" />
+          <img
+            src={img}
+            style={{ width: isMobile ? "100%" : "90%", height: "20rem" }}
+            alt=""
+          />
         </Grid>
       </Grid>
     </Paper>

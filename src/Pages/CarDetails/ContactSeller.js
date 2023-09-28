@@ -26,7 +26,7 @@ export default function ContactSeller() {
       >
         <Typography variant="h5">Contact Form</Typography>
         <Grid container spacing={2}>
-          <Grid item md={12}>
+          <Grid item md={12} xs={12}>
             <TextField
               margin="normal"
               fullWidth
@@ -35,7 +35,7 @@ export default function ContactSeller() {
               sx={{ background: "white", borderRadius: 2 }}
             />
           </Grid>
-          <Grid item md={12}>
+          <Grid item md={12} xs={12}>
             <TextField
               margin="normal"
               fullWidth
@@ -44,7 +44,7 @@ export default function ContactSeller() {
               sx={{ background: "white", borderRadius: 2 }}
             />
           </Grid>
-          <Grid item md={12}>
+          <Grid item md={12} xs={12}>
             <TextField
               margin="normal"
               fullWidth
@@ -54,7 +54,7 @@ export default function ContactSeller() {
             />
           </Grid>
 
-          <Grid item md={12}>
+          <Grid item md={12} xs={12}>
             <TextField
               margin="normal"
               fullWidth
@@ -63,7 +63,7 @@ export default function ContactSeller() {
               sx={{ background: "white", borderRadius: 2 }}
             />
           </Grid>
-          <Grid item md={12}>
+          <Grid item md={12} xs={12}>
             <TextField
               margin="normal"
               fullWidth
@@ -74,7 +74,7 @@ export default function ContactSeller() {
               sx={{ background: "white", borderRadius: 2 }}
             />
           </Grid>
-          <Grid item md={12} textAlign="center">
+          <Grid item md={12} xs={12} textAlign="center">
             <SolidButton label="Submit Now" />
           </Grid>
         </Grid>

@@ -14,7 +14,7 @@ export default function FeaturesListing() {
         backgroundSize: "cover",
         backgroundPosition: "center",
         width: "100%",
-        height: "300px",
+        height: "100%",
         mb: "4rem",
       }}
     >
@@ -24,8 +24,7 @@ export default function FeaturesListing() {
           flexDirection: "column",
           textAlign: "center",
           width: "100%",
-          mt: "4rem",
-          mx: "2rem",
+          m: "2rem",
         }}
       >
         <Grid container spacing={2}>
