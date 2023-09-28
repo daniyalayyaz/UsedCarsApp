@@ -11,3 +11,20 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.custom-paging {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.custom-paging-image {
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  margin: 0 5px;
+}
+
+.custom-paging-image.active {
+  border: 2px solid #000;
+}
