@@ -17,10 +17,12 @@ export default function CarsList({ heading }) {
 
   useEffect(() => {
     if (CarData) {
-      const filteredData = CarData.filter((item) => item.country === heading);
+      const filteredData = CarData.filter(
+        (item) => item.country === heading.name
+      );
       setList(filteredData);
     }
-  }, [heading]);
+  }, [heading.name]);
 
   return (
     <>

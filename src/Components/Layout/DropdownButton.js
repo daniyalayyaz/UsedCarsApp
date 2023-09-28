@@ -13,12 +13,10 @@ function DropdownButton({ setHeading }) {
     setAnchorEl(event.currentTarget);
   };
   const handleJapenseCars = (name) => {
-    navigate("/carlistings");
-    setHeading(name);
+    navigate(`/carlistings/${name}`);
   };
   const handleUKCars = (name) => {
-    navigate("/carlistings");
-    setHeading(name);
+    navigate(`/carlistings/${name}`);
   };
   const handleCloseMenu = () => {
     setAnchorEl(null);

@@ -6,14 +6,14 @@ import ListingSidebar from "./ListingSidebar";
 import CarsList from "./CarsList";
 import { Container, Grid } from "@mui/material";
 import { useIsMobile } from "../../contexts/isMobile";
+import { useParams } from "react-router-dom";
 
 export default function CarsListingsIndex() {
   const isMobile = useIsMobile();
-  const [heading, setHeading] = useState("");
-
+  const heading = useParams();
   return (
     <>
-      <Navbar {...{ heading, setHeading }} />
+      <Navbar />
       <ListingHeader {...{ heading }} />
       <Container>
         <Grid container my={2} spacing={2}>

@@ -3,6 +3,6 @@ export const PATHS = {
   about: "/about",
   contact: "/contact",
   faqs: "/faqs",
-  carslistings: "/carlistings",
+  carslistings: "/carlistings/:name",
   cardetails: "/carlistings/:id",
 };

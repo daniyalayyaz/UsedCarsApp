@@ -3,13 +3,15 @@ import React from "react";
 
 export default function ListingHeader({ heading }) {
   const modifyheading =
-    heading &&
+    heading.name &&
     `${
-      heading === "Japan" ? `Japanese Cars Listing` : `${heading} Cars Listing`
+      heading.name === "Japan"
+        ? `Japanese Cars Listing`
+        : `${heading.name} Cars Listing`
     } `;
   return (
     <>
-      {heading && (
+      {heading.name && (
         <Stack
           direction="row"
           justifyContent="center"

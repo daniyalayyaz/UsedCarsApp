@@ -6,7 +6,7 @@ import { SolidButton } from "../SolidButton";
 import { useIsMobile } from "../../contexts/isMobile";
 import DropdownButton from "./DropdownButton";
 
-export default function Navbar({ setHeading }) {
+export default function Navbar() {
   const navigate = useNavigate();
   const isMobile = useIsMobile();
   const handleHome = () => {
@@ -22,13 +22,12 @@ export default function Navbar({ setHeading }) {
     navigate("/faqs");
   };
   const handleJapenseCars = (name) => {
-    navigate("/carlistings");
-    setHeading(name);
+    navigate(`/carlistings/${name}`);
   };
   const handleUKCars = (name) => {
-    navigate("/carlistings");
-    setHeading(name);
+    navigate(`/carlistings/${name}`);
   };
+
   return (
     <>
       <AppBar position="static" sx={{ backgroundColor: "primary" }}>
@@ -51,7 +50,7 @@ export default function Navbar({ setHeading }) {
 
           {isMobile ? (
             <div div style={{ marginLeft: "auto" }}>
-              <DropdownButton {...{ setHeading }} />
+              <DropdownButton />
             </div>
           ) : (
             <div style={{ marginLeft: "auto" }}>
@@ -61,7 +60,10 @@ export default function Navbar({ setHeading }) {
                     <SolidButton label="Home" onClick={handleHome} />
                   </Grid>
                   <Grid>
-                    <SolidButton label="About Us" onClick={handleAbout} />
+                    <SolidButton
+                      label="About Us"
+                      onClick={() => handleAbout()}
+                    />
                   </Grid>
                   <Grid>
                     <SolidButton
