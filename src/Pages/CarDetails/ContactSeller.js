@@ -1,6 +1,7 @@
 import { Box, Grid, Stack, TextField, Typography } from "@mui/material";
 import React, { useState } from "react";
 import { SolidButton } from "../../Components/SolidButton";
+import { toast } from "react-toastify";
 
 export default function ContactSeller() {
   const [form, setForm] = useState({
@@ -16,6 +17,7 @@ export default function ContactSeller() {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(form);
+    toast.success("Request Sent Successfully");
   };
 
   return (

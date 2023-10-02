@@ -99,14 +99,9 @@ export default function CarDetails({ data }) {
           </Grid>
           <Grid item>
             <Typography variant="h5" fontWeight="bold" my={2}>
-              Seller Comments
+              Description
             </Typography>
-            <Typography>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti
-              eaque quos, ipsa molestiae ullam sequi fugiat recusandae quae
-              voluptatum eum, molestias soluta repudiandae voluptas? Libero
-              impedit consectetur illum earum quidem.
-            </Typography>
+            <Typography>{data.description}</Typography>
           </Grid>
         </Grid>
         <InspectionCard />

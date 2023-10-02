@@ -15,9 +15,13 @@ export const CarData = [
     price: "$4,000",
     steering: "Left Hand Drive",
     date: "2 November,2022",
+    description:
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum aperiam quisquam reiciendis, eveniet accusantium animi est sapiente modi delectus enim",
   },
   {
     id: "4",
+    description:
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum aperiam quisquam reiciendis, eveniet accusantium animi est sapiente modi delectus enim, ullam perferendis maiores doloribus rerum natus necessitatibus debitis, numquam dignissimos",
     name: "Sue gate F 1.0 for Sale",
     year: "2014",
     mileage: "2,000 km",
@@ -42,6 +46,8 @@ export const CarData = [
     fuel: "Petrol",
     cc: "1300cc",
     transmission: "Automatic",
+    description:
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum aperiam quisquam reiciendis, eveniet accusantium animi est sapiente modi delectus enim, ullam perferendis maiores doloribus rerum natus necessitatibus debitis, numquam dignissimos",
     color: "black",
     make: "Toyota",
     model: "Corola",
@@ -58,6 +64,8 @@ export const CarData = [
     country: "Japan",
     fuel: "Petrol",
     cc: "1300cc",
+    description:
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum aperiam quisquam reiciendis, eveniet accusantium animi est sapiente modi delectus enim, ullam perferendis maiores doloribus rerum natus necessitatibus debitis, numquam dignissimos",
     transmission: "Automatic",
     color: "black",
     make: "Toyota",

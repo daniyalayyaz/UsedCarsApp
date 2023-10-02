@@ -1,6 +1,6 @@
 import { Button, Card, Grid, TextField } from "@mui/material";
 import React, { useState } from "react";
-
+import { toast } from "react-toastify";
 export default function ContactUsForm() {
   const [form, setForm] = useState({
     name: "",
@@ -15,6 +15,7 @@ export default function ContactUsForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(form);
+    toast.success("Form is Submitted Successfully");
   };
   return (
     <Card sx={{ width: "100%", height: "100%" }}>
