@@ -1,8 +1,23 @@
 import { Box, Grid, Stack, TextField, Typography } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 import { SolidButton } from "../../Components/SolidButton";
 
 export default function ContactSeller() {
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    subject: "",
+    message: "",
+  });
+  const handleChange = (e) => {
+    setForm((form) => ({ ...form, [e.target.name]: e.target.value }));
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(form);
+  };
+
   return (
     <Stack
       direction="row"
@@ -30,8 +45,10 @@ export default function ContactSeller() {
             <TextField
               margin="normal"
               fullWidth
+              onChange={handleChange}
               label="Your Name"
-              name="fullname"
+              name="name"
+              value={form.name}
               sx={{ background: "white", borderRadius: 2 }}
             />
           </Grid>
@@ -41,6 +58,8 @@ export default function ContactSeller() {
               fullWidth
               label="Your Email"
               name="email"
+              value={form.email}
+              onChange={handleChange}
               sx={{ background: "white", borderRadius: 2 }}
             />
           </Grid>
@@ -50,6 +69,8 @@ export default function ContactSeller() {
               fullWidth
               label="PhoneNumber"
               name="phone"
+              value={form.phone}
+              onChange={handleChange}
               sx={{ background: "white", borderRadius: 2 }}
             />
           </Grid>
@@ -60,6 +81,8 @@ export default function ContactSeller() {
               fullWidth
               label="Subject"
               name="subject"
+              onChange={handleChange}
+              value={form.subject}
               sx={{ background: "white", borderRadius: 2 }}
             />
           </Grid>
@@ -71,11 +94,13 @@ export default function ContactSeller() {
               multiline
               label="Messsage"
               name="message"
+              onChange={handleChange}
+              value={form.message}
               sx={{ background: "white", borderRadius: 2 }}
             />
           </Grid>
           <Grid item md={12} xs={12} textAlign="center">
-            <SolidButton label="Submit Now" />
+            <SolidButton label="Submit Now" onClick={handleSubmit} />
           </Grid>
         </Grid>
       </Box>

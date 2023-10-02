@@ -1,9 +1,15 @@
 import { Box, Button, Grid, Stack, Typography } from "@mui/material";
 import React from "react";
-import { useIsMobile } from "../../contexts/isMobile";
+import { useNavigate } from "react-router-dom";
 
 export default function GetStartedToday() {
-  const isMobile = useIsMobile();
+  const navigate = useNavigate();
+  const handleJapenseCar = (name) => {
+    navigate(`/carlistings/${name}`);
+  };
+  const handleUKCar = (name) => {
+    navigate(`/carlistings/${name}`);
+  };
   return (
     <Stack
       direction="row"
@@ -44,7 +50,7 @@ export default function GetStartedToday() {
                 color: "white",
                 fontFamily: "Semibold",
               }}
-              onClick={""}
+              onClick={() => handleJapenseCar("Japan")}
             >
               Do you want to buy a Japense Car?
             </Button>
@@ -60,7 +66,7 @@ export default function GetStartedToday() {
                 color: "white",
                 fontFamily: "Semibold",
               }}
-              onClick={""}
+              onClick={() => handleUKCar("UK")}
             >
               Do you want to buy a UK Car?
             </Button>

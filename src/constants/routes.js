@@ -4,5 +4,5 @@ export const PATHS = {
   contact: "/contact",
   faqs: "/faqs",
   carslistings: "/carlistings/:name",
-  cardetails: "/carlistings/:id",
+  cardetails: "/carlistings/:name/:id",
 };

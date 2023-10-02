@@ -4,9 +4,9 @@ import CarCard from "../../Components/CarCard";
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import Slider from "react-slick";
-import { CarData } from "./CarUtils";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { CarData } from "../CarsListings/CarDataUtils";
 
 const CustomPrevArrow = (props) => {
   return (
@@ -107,9 +107,10 @@ export default function FeaturedCars() {
           {CarData.map((item, index) => (
             <Grid item key={index}>
               <CarCard
-                car={item.car}
+                name={item.name}
                 price={item.price}
-                location={item.location}
+                country={item.country}
+                id={item.id}
               />
             </Grid>
           ))}

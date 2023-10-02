@@ -1,5 +1,5 @@
 import { Box, Grid, Stack, Typography } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 import DropdownMake from "../../Components/DropdownMake";
 import DropdownModel from "../../Components/DropdownModel";
 import DropdownBodyType from "../../Components/DropdownBodyType";
@@ -12,7 +12,14 @@ import DropdownSteering from "../../Components/DropdownSteering";
 import DropdownFuel from "../../Components/DropdownFuel";
 import DropdownPrice from "../../Components/DropdownPriceRange";
 import { SolidButton } from "../../Components/SolidButton";
+
 export default function ListingSidebar() {
+  const [searchText, setSearchText] = useState("");
+
+  const handleSearch = (e) => {
+    setSearchText(e.target.value);
+  };
+
   return (
     <Stack
       direction="row"
@@ -111,7 +118,7 @@ export default function ListingSidebar() {
           </Grid>
 
           <Grid item md={12} xs={12} textAlign="center" mt="1rem">
-            <SolidButton label="Search " />
+            <SolidButton label="Search " onClick={handleSearch} />
           </Grid>
         </Grid>
       </Box>

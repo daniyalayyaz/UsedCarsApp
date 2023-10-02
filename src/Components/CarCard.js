@@ -7,19 +7,25 @@ import {
 } from "@mui/material";
 import React from "react";
 import img from "../assets/img.png";
+import { useNavigate } from "react-router-dom";
 
-export default function CarCard({ car, price, location }) {
+export default function CarCard({ name, price, country, id }) {
+  const navigate = useNavigate();
+
+  const handleClick = (name, id) => {
+    navigate(`/carlistings/${name}/${id}`);
+  };
   return (
     <Card sx={{ margin: "1rem", maxWidth: "100%", maxHeight: "100%" }}>
       <CardContent sx={{ textAlign: "center" }}>
         <Typography gutterBottom variant="h5">
-          {car}
+          {name}
         </Typography>
         <Typography variant="body1" color="text.secondary">
           {price}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          {location}
+          {country}
         </Typography>
       </CardContent>
       <CardMedia
@@ -41,7 +47,7 @@ export default function CarCard({ car, price, location }) {
             marginRight: "10px",
             fontFamily: "Semibold",
           }}
-          onClick={""}
+          onClick={() => handleClick(country, id)}
         >
           View Details
         </Button>

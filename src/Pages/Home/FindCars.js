@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import bg from "../../assets/bg.png";
 import DropdownCountry from "../../Components/DropdownCountry";
 import DropdownPrice from "../../Components/DropdownPrice";
-import { useIsMobile } from "../../contexts/isMobile";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 
@@ -11,7 +10,6 @@ export default function FindCars() {
   const bgImg = `url(${bg})`;
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.up("sm"));
-  console.log(matches, "matches");
   const [form, setForm] = useState({
     country: "",
     price: "",
@@ -83,7 +81,7 @@ export default function FindCars() {
                 color: "white",
                 fontFamily: "Semibold",
               }}
-              onClick={""}
+              onClick={handleSearch}
             >
               Search
             </Button>

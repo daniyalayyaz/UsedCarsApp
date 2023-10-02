@@ -11,8 +11,8 @@ export default function CarsList({ heading }) {
   const [list, setList] = useState([]);
   const isMobile = useIsMobile();
   const navigate = useNavigate();
-  const handleDetail = (id) => {
-    navigate(`/carlistings/${id}`);
+  const handleDetail = (name, id) => {
+    navigate(`/carlistings/${name}/${id}`);
   };
 
   useEffect(() => {
@@ -99,7 +99,7 @@ export default function CarsList({ heading }) {
                   color: "white",
                   fontFamily: "Semibold",
                 }}
-                onClick={() => handleDetail(item.id)}
+                onClick={() => handleDetail(item.country, item.id)}
               >
                 View Details
               </Button>
