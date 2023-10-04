@@ -27,14 +27,12 @@ export default function CarsListingsIndex() {
 
   useEffect(() => {
     if (carsData) {
-      console.log(heading, "hhh");
       const filteredData = carsData.filter(
         (item) => item.country === heading.name
       );
-      console.log(filteredData, "data");
       setList(filteredData);
     }
-  }, [heading.name]);
+  }, [heading, carsData]);
 
   return (
     <>

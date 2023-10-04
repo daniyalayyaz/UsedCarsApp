@@ -26,7 +26,7 @@ export default function InspectionCard() {
           </Typography>
         </Grid>
         <Grid item md={6}>
-          <img src={car} width={310} />
+          <img src={car} width={310} alt="" />
         </Grid>
       </Grid>
     </Card>

@@ -1,10 +1,11 @@
 import { Button, Card, Grid, Typography } from "@mui/material";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useIsMobile } from "../../contexts/isMobile";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import SpeedIcon from "@mui/icons-material/Speed";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import { useNavigate } from "react-router-dom";
+import moment from "moment/moment";
 
 export default function CarsList({ list }) {
   const isMobile = useIsMobile();
@@ -14,6 +15,7 @@ export default function CarsList({ list }) {
     navigate(`/carlistings/${name}/${id}`);
   };
 
+  console.log(list);
   return (
     <>
       {list.map((item, index) => (
@@ -66,7 +68,9 @@ export default function CarsList({ list }) {
                   {item.transmission}
                 </Grid>
               </Grid>
-              <Typography>Last Updated: {item.date}</Typography>
+              <Typography>
+                Last Updated: {moment(item.createdAt).format("MMMM Do YYYY")}
+              </Typography>
             </Grid>
             <Grid
               item

@@ -79,6 +79,7 @@ function ImageSlider() {
               width="90%"
               height="300px"
               style={{ borderRadius: "8px" }}
+              alt=""
             />
           </div>
         </div>
@@ -89,6 +90,7 @@ function ImageSlider() {
               width="90%"
               height="300px"
               style={{ borderRadius: "8px" }}
+              alt=""
             />
           </div>
         </div>
@@ -99,6 +101,7 @@ function ImageSlider() {
               width="90%"
               height="300px"
               style={{ borderRadius: "8px" }}
+              alt=""
             />
           </div>
         </div>
@@ -109,6 +112,7 @@ function ImageSlider() {
               width="90%"
               height="300px"
               style={{ borderRadius: "8px" }}
+              alt=""
             />
           </div>
         </div>
@@ -119,6 +123,7 @@ function ImageSlider() {
               width="90%"
               height="300px"
               style={{ borderRadius: "8px" }}
+              alt=""
             />
           </div>
         </div>

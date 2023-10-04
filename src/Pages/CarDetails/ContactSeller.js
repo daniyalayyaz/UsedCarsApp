@@ -26,7 +26,14 @@ export default function ContactSeller() {
       message: form.message,
       type: form.type,
     };
-    setForm({});
+    setForm({
+      fullname: "",
+      email: "",
+      phone: "",
+      subject: "",
+      message: "",
+      type: "Inquiry",
+    });
     try {
       const response = await POST("/contact", formData);
 

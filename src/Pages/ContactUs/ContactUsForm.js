@@ -24,7 +24,14 @@ export default function ContactUsForm() {
       message: form.message,
       type: form.type,
     };
-    setForm({});
+    setForm({
+      fullname: "",
+      email: "",
+      phone: "",
+      address: "",
+      message: "",
+      type: "Contact",
+    });
     try {
       const response = await POST("/contact", formData);
 
