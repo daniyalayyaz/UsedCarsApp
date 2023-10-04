@@ -16,18 +16,17 @@ const MapContainer = ({ zipcode }) => {
 
   const onMapLoad = (map) => {
     if (!window.google || !window.google.maps) {
-      console.error("Google Maps JavaScript API not loaded!");
+      console.error("Google Maps API not loaded!");
       return;
     }
-    const geocoder = new window.google.maps.Geocoder();
+    const geoCoder = new window.google.maps.Geocoder();
 
-    geocoder.geocode({ address: zipcode }, (results, status) => {
+    geoCoder.geocode({ address: zipcode }, (results, status) => {
       if (status === "OK") {
-        console.log("see results by zipcode ", results);
         setBounds(results[0].geometry.bounds);
         map.fitBounds(results[0].geometry.bounds);
       } else {
-        alert("Geocode was not successful for the following reason: " + status);
+        alert("GeoCode was not successful: " + status);
       }
     });
   };
@@ -40,7 +39,6 @@ const MapContainer = ({ zipcode }) => {
       <GoogleMap
         mapContainerStyle={containerStyle}
         center={center}
-        // zoom={10}
         onLoad={onMapLoad}
       >
         {bounds && (

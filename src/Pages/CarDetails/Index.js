@@ -7,18 +7,20 @@ import { Container, Grid, Typography } from "@mui/material";
 import { useParams } from "react-router-dom";
 import CarDetails from "./CarDetails";
 import ContactSeller from "./ContactSeller";
-import { CarData } from "../CarsListings/CarDataUtils";
+import { GETID } from "../../api/axios";
 
 export default function CarDetailIndex() {
   const { id } = useParams();
   const [data, setData] = useState([]);
+  const fetchData = async () => {
+    GETID(`/cars/${id}`).then((result) => {
+      setData(result);
+    });
+  };
 
   useEffect(() => {
-    if (id) {
-      const carData = CarData.filter((item) => item.id === id);
-      setData(carData[0]);
-    }
-  }, [id]);
+    fetchData();
+  }, []);
 
   return (
     <div>

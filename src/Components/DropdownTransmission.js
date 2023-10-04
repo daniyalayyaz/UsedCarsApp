@@ -11,7 +11,7 @@ const TransmissionData = [
 ];
 
 function DropdownTransmission() {
-  const [transmission, setTransmission] = useState();
+  const [transmission, setTransmission] = useState("");
 
   const handleChange = (e) => {
     setTransmission(e.target.value);

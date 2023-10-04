@@ -11,7 +11,7 @@ const SteeringData = [
 ];
 
 function DropdownSteering() {
-  const [steering, setSteering] = useState();
+  const [steering, setSteering] = useState("");
 
   const handleChange = (e) => {
     setSteering(e.target.value);

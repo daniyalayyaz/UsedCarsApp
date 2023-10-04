@@ -18,7 +18,7 @@ const CCData = [
 ];
 
 function DropdownCC() {
-  const [cc, setCc] = useState();
+  const [cc, setCc] = useState("");
 
   const handleChange = (e) => {
     setCc(e.target.value);

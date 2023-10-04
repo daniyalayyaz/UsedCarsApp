@@ -14,7 +14,7 @@ const MileageData = [
 ];
 
 function DropdownMileage() {
-  const [mileage, setMileage] = useState();
+  const [mileage, setMileage] = useState("");
 
   const handleChange = (e) => {
     setMileage(e.target.value);

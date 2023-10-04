@@ -13,7 +13,7 @@ const ColorData = [
 ];
 
 function DropdownColor() {
-  const [color, setColor] = useState();
+  const [color, setColor] = useState("");
 
   const handleChange = (e) => {
     setColor(e.target.value);

@@ -15,7 +15,7 @@ const BodyTypeData = [
 ];
 
 function DropdownBodyType() {
-  const [bodytype, setBodyType] = useState();
+  const [bodytype, setBodyType] = useState("");
 
   const handleChange = (e) => {
     setBodyType(e.target.value);

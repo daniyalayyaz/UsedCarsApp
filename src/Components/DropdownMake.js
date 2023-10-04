@@ -30,7 +30,7 @@ const MakeData = [
 ];
 
 function DropdownMake() {
-  const [make, setMake] = useState();
+  const [make, setMake] = useState("");
 
   const handleChange = (e) => {
     setMake(e.target.value);

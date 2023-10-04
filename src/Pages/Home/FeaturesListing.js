@@ -1,8 +1,5 @@
 import { Box, Grid, Stack, Typography } from "@mui/material";
 import React from "react";
-import avatar from "../../assets/avatar.png";
-import car from "../../assets/car.png";
-import sell from "../../assets/sell-icon.png";
 
 export default function FeaturesListing() {
   return (
@@ -29,24 +26,31 @@ export default function FeaturesListing() {
       >
         <Grid container spacing={2}>
           <Grid item md={4}>
-            <img src={avatar} alt="" />
-            <Typography variant="h5">Create a Free Account</Typography>
+            <img src={require(`../../assets/detail.png`)} alt="" width={40} />
+            <Typography variant="h5" mt={2}>
+              Detailed Listings
+            </Typography>
             <Typography variant="body">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incidid ut labore et dolore magna aliqua.
             </Typography>
           </Grid>
           <Grid item md={4}>
-            <img src={car} alt="" />
-            <Typography variant="h5">Post Your Free Car</Typography>
+            <img src={require(`../../assets/buy.png`)} alt="" width={50} />
+            <Typography variant="h5" mt={1}>
+              {" "}
+              Buy
+            </Typography>
             <Typography variant="body">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incidid ut labore et dolore magna aliqua.
             </Typography>
           </Grid>
           <Grid item md={4}>
-            <img src={sell} alt="" />
-            <Typography variant="h5">Sold or Buy</Typography>
+            <img src={require(`../../assets/privacy.png`)} alt="" width={40} />
+            <Typography variant="h5" mt={2}>
+              Privacy Policy and Terms
+            </Typography>
             <Typography variant="body">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incidid ut labore et dolore magna aliqua.

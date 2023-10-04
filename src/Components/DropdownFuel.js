@@ -15,7 +15,7 @@ const FuelData = [
 ];
 
 function DropdownFuel() {
-  const [fuel, setFuel] = useState();
+  const [fuel, setFuel] = useState("");
 
   const handleChange = (e) => {
     setFuel(e.target.value);

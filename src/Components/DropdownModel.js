@@ -15,7 +15,7 @@ const ModelData = [
 ];
 
 function DropdownModel() {
-  const [model, setModel] = useState();
+  const [model, setModel] = useState("");
 
   const handleChange = (e) => {
     setModel(e.target.value);

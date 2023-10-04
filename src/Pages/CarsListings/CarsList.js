@@ -4,25 +4,15 @@ import { useIsMobile } from "../../contexts/isMobile";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import SpeedIcon from "@mui/icons-material/Speed";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
-import { CarData } from "./CarDataUtils";
 import { useNavigate } from "react-router-dom";
 
-export default function CarsList({ heading }) {
-  const [list, setList] = useState([]);
+export default function CarsList({ list }) {
   const isMobile = useIsMobile();
   const navigate = useNavigate();
+
   const handleDetail = (name, id) => {
     navigate(`/carlistings/${name}/${id}`);
   };
-
-  useEffect(() => {
-    if (CarData) {
-      const filteredData = CarData.filter(
-        (item) => item.country === heading.name
-      );
-      setList(filteredData);
-    }
-  }, [heading.name]);
 
   return (
     <>
@@ -38,12 +28,12 @@ export default function CarsList({ heading }) {
           }}
         >
           <Grid container spacing={2} m={2} alignItems="cnter">
-            <Grid md={2} xs={10} justifyContent="center">
+            <Grid item md={2} xs={10} justifyContent="center">
               <img
                 src={require(`../../assets/list.jpg`)}
                 alt="Logo"
                 style={{
-                  width: isMobile ? "100%" : 160,
+                  width: isMobile ? "100%" : 130,
                   height: "100%",
                 }}
               />
@@ -99,7 +89,7 @@ export default function CarsList({ heading }) {
                   color: "white",
                   fontFamily: "Semibold",
                 }}
-                onClick={() => handleDetail(item.country, item.id)}
+                onClick={() => handleDetail(item.country, item._id)}
               >
                 View Details
               </Button>

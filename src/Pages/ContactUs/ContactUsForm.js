@@ -1,21 +1,39 @@
 import { Button, Card, Grid, TextField } from "@mui/material";
 import React, { useState } from "react";
 import { toast } from "react-toastify";
+import { POST } from "../../api/axios";
 export default function ContactUsForm() {
   const [form, setForm] = useState({
-    name: "",
+    fullname: "",
     email: "",
     phone: "",
     address: "",
     message: "",
+    type: "Contact",
   });
   const handleChange = (e) => {
     setForm((form) => ({ ...form, [e.target.name]: e.target.value }));
   };
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(form);
-    toast.success("Form is Submitted Successfully");
+    const formData = {
+      fullname: form.fullname,
+      email: form.email,
+      phone: form.phone,
+      address: form.address,
+      message: form.message,
+      type: form.type,
+    };
+    setForm({});
+    try {
+      const response = await POST("/contact", formData);
+
+      if (response) {
+        toast.success("Contact Form Submitted Successfully");
+      }
+    } catch (error) {
+      toast.error(error.response.data.message);
+    }
   };
   return (
     <Card sx={{ width: "100%", height: "100%" }}>
@@ -32,8 +50,8 @@ export default function ContactUsForm() {
               margin="normal"
               fullWidth
               label="FullName"
-              name="name"
-              value={form.name}
+              name="fullname"
+              value={form.fullname}
               onChange={handleChange}
             />
           </Grid>

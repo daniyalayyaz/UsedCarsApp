@@ -20,7 +20,7 @@ const YearData = [
 ];
 
 function DropdownYear() {
-  const [year, setYear] = useState();
+  const [year, setYear] = useState("");
 
   const handleChange = (e) => {
     setYear(e.target.value);

@@ -15,7 +15,7 @@ const PriceData = [
 ];
 
 function DropdownPrice() {
-  const [price, setPrice] = useState();
+  const [price, setPrice] = useState("");
 
   const handleChange = (e) => {
     setPrice(e.target.value);
