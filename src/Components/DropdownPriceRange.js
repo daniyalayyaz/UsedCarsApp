@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Box from "@mui/material/Box";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
@@ -14,13 +14,10 @@ const PriceData = [
   { _id: 6, title: "Over $6000" },
 ];
 
-function DropdownPrice() {
-  const [price, setPrice] = useState("");
-
+function DropdownPrice({ form, setForm }) {
   const handleChange = (e) => {
-    setPrice(e.target.value);
+    setForm((form) => ({ ...form, [e.target.name]: e.target.value }));
   };
-
   return (
     <Box
       sx={{
@@ -36,7 +33,7 @@ function DropdownPrice() {
           labelId="demo-simple-select-label"
           id="demo-simple-select"
           name="price"
-          value={price}
+          value={form.price}
           label="Price"
           onChange={handleChange}
           sx={{ height: 40 }}

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Box from "@mui/material/Box";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
@@ -14,11 +14,9 @@ const ModelData = [
   { _id: 2, title: "VITZ Hybrid" },
 ];
 
-function DropdownModel() {
-  const [model, setModel] = useState("");
-
+function DropdownModel({ form, setForm }) {
   const handleChange = (e) => {
-    setModel(e.target.value);
+    setForm((form) => ({ ...form, [e.target.name]: e.target.value }));
   };
 
   return (
@@ -36,7 +34,7 @@ function DropdownModel() {
           labelId="demo-simple-select-label"
           id="demo-simple-select"
           name="model"
-          value={model}
+          value={form.model}
           label="Model"
           onChange={handleChange}
           sx={{ height: 40 }}

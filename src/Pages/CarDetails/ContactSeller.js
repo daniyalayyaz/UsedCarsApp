@@ -22,7 +22,7 @@ export default function ContactSeller() {
       fullname: form.fullname,
       email: form.email,
       phone: form.phone,
-      subject: form.subject,
+      subject: form.subject || "N/A",
       message: form.message,
       type: form.type,
     };
@@ -85,6 +85,8 @@ export default function ContactSeller() {
               fullWidth
               label="Your Email"
               name="email"
+              type="email"
+              pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
               value={form.email}
               onChange={handleChange}
               sx={{ background: "white", borderRadius: 2 }}

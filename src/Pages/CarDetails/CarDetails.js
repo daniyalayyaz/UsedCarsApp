@@ -3,7 +3,7 @@ import React from "react";
 import InspectionCard from "./InspectionCard";
 import ImageSlider from "./ImageSlider";
 
-export default function CarDetails({ data }) {
+export default function CarDetails({ data, imagesArray }) {
   return (
     <Stack
       direction="row"
@@ -24,7 +24,11 @@ export default function CarDetails({ data }) {
           my: "2rem",
         }}
       >
-        <ImageSlider />
+        <ImageSlider
+          data={data.multipleimages}
+          MultiImages={imagesArray}
+          coverImage={data.coverImage}
+        />
         <Grid container my={5}>
           <Typography variant="h5" fontWeight="bold">
             About this Car

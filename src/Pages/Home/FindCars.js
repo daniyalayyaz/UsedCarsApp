@@ -6,7 +6,7 @@ import DropdownPrice from "../../Components/DropdownPrice";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 
-export default function FindCars() {
+export default function FindCars({ carsData, setCarsData }) {
   const bgImg = `url(${bg})`;
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.up("sm"));
@@ -16,8 +16,29 @@ export default function FindCars() {
   });
   const [searchText, setSearchText] = useState("");
 
-  const handleSearch = (e) => {
+  const handleSearchText = (e) => {
+    console.log("handleSearchText called");
     setSearchText(e.target.value);
+    const text = e.target.value.trim().toLowerCase(); // Convert search text to lowercase
+    const filteredCars = carsData.filter((item) =>
+      item.name.toLowerCase().includes(text)
+    );
+    setCarsData(filteredCars);
+    console.log(filteredCars);
+  };
+
+  const handleSearch = (e) => {
+    const lowerCaseCountry = form.country.toLowerCase();
+
+    const filteredData = carsData.filter((item) => {
+      const countryMatch = item.country.toLowerCase() === lowerCaseCountry;
+      const priceMatch = item.price === form.price;
+
+      return countryMatch || priceMatch;
+    });
+    console.log(filteredData, "flterdata");
+
+    setCarsData(filteredData);
   };
 
   return (
@@ -58,7 +79,7 @@ export default function FindCars() {
               label="Search"
               placeholder="Search..."
               value={searchText}
-              onChange={handleSearch}
+              onChange={handleSearchText}
               sx={{ background: "white", borderRadius: "8px" }}
             />
           </Grid>

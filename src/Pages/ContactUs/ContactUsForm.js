@@ -20,7 +20,7 @@ export default function ContactUsForm() {
       fullname: form.fullname,
       email: form.email,
       phone: form.phone,
-      address: form.address,
+      address: form.address || "N/A",
       message: form.message,
       type: form.type,
     };

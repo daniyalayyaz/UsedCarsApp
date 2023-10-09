@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Box from "@mui/material/Box";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
@@ -14,11 +14,9 @@ const FuelData = [
   { _id: 6, title: "Electric" },
 ];
 
-function DropdownFuel() {
-  const [fuel, setFuel] = useState("");
-
+function DropdownFuel({ form, setForm }) {
   const handleChange = (e) => {
-    setFuel(e.target.value);
+    setForm((form) => ({ ...form, [e.target.name]: e.target.value }));
   };
 
   return (
@@ -36,7 +34,7 @@ function DropdownFuel() {
           labelId="demo-simple-select-label"
           id="demo-simple-select"
           name="fuel"
-          value={fuel}
+          value={form.fuel}
           label="Fuel"
           onChange={handleChange}
           sx={{ height: 40 }}

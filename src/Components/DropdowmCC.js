@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Box from "@mui/material/Box";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
@@ -17,11 +17,9 @@ const CCData = [
   { _id: 9, title: "4500-5000" },
 ];
 
-function DropdownCC() {
-  const [cc, setCc] = useState("");
-
+function DropdownCC({ form, setForm }) {
   const handleChange = (e) => {
-    setCc(e.target.value);
+    setForm((form) => ({ ...form, [e.target.name]: e.target.value }));
   };
 
   return (
@@ -39,7 +37,7 @@ function DropdownCC() {
           labelId="demo-simple-select-label"
           id="demo-simple-select"
           name="cc"
-          value={cc}
+          value={form.cc}
           label="CC"
           onChange={handleChange}
           sx={{ height: 40 }}

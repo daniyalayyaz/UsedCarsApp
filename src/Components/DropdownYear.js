@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Box from "@mui/material/Box";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
@@ -19,11 +19,9 @@ const YearData = [
   { _id: 11, title: "2020-2022" },
 ];
 
-function DropdownYear() {
-  const [year, setYear] = useState("");
-
+function DropdownYear({ form, setForm }) {
   const handleChange = (e) => {
-    setYear(e.target.value);
+    setForm((form) => ({ ...form, [e.target.name]: e.target.value }));
   };
 
   return (
@@ -41,7 +39,7 @@ function DropdownYear() {
           labelId="demo-simple-select-label"
           id="demo-simple-select"
           name="year"
-          value={year}
+          value={form.year}
           label="Year"
           onChange={handleChange}
           sx={{ height: 40 }}

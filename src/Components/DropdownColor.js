@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Box from "@mui/material/Box";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
@@ -12,11 +12,9 @@ const ColorData = [
   { _id: 2, title: "Mehroon" },
 ];
 
-function DropdownColor() {
-  const [color, setColor] = useState("");
-
+function DropdownColor({ form, setForm }) {
   const handleChange = (e) => {
-    setColor(e.target.value);
+    setForm((form) => ({ ...form, [e.target.name]: e.target.value }));
   };
 
   return (
@@ -34,7 +32,7 @@ function DropdownColor() {
           labelId="demo-simple-select-label"
           id="demo-simple-select"
           name="color"
-          value={color}
+          value={form.color}
           label="Color"
           onChange={handleChange}
           sx={{ height: 40 }}

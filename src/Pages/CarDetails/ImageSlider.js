@@ -52,7 +52,7 @@ const CustomNextArrow = (props) => {
   );
 };
 
-function ImageSlider() {
+function ImageSlider({ data, MultiImages, coverImage }) {
   const [settings] = useState({
     dots: true,
     dotsClass: "slick-dots custom-dots",
@@ -63,7 +63,6 @@ function ImageSlider() {
     prevArrow: <CustomPrevArrow />,
     nextArrow: <CustomNextArrow />,
   });
-
   return (
     <div
       style={{
@@ -71,63 +70,44 @@ function ImageSlider() {
         height: "300px",
       }}
     >
-      <Slider {...settings}>
-        <div>
-          <div style={{ display: "flex", justifyContent: "center" }}>
-            <img
-              src={require(`../../assets/img22.jpg`)}
-              width="90%"
-              height="300px"
-              style={{ borderRadius: "8px" }}
-              alt=""
-            />
+      {coverImage || data ? (
+        <Slider {...settings}>
+          <div>
+            <div style={{ display: "flex", justifyContent: "center" }}>
+              <img
+                src={`http://localhost:5000/upload${coverImage}`}
+                width="90%"
+                height="300px"
+                style={{ borderRadius: "8px" }}
+                alt=""
+              />
+            </div>
           </div>
+          {MultiImages.map((item) => (
+            <div>
+              <div style={{ display: "flex", justifyContent: "center" }}>
+                <img
+                  src={item}
+                  width="90%"
+                  height="300px"
+                  style={{ borderRadius: "8px" }}
+                  alt=""
+                />
+              </div>
+            </div>
+          ))}
+        </Slider>
+      ) : (
+        <div style={{ display: "flex", justifyContent: "center" }}>
+          <img
+            src={require(`../../assets/noImage.jpeg`)}
+            width="90%"
+            height="300px"
+            style={{ borderRadius: "8px" }}
+            alt=""
+          />
         </div>
-        <div>
-          <div style={{ display: "flex", justifyContent: "center" }}>
-            <img
-              src={require(`../../assets/img23.jpg`)}
-              width="90%"
-              height="300px"
-              style={{ borderRadius: "8px" }}
-              alt=""
-            />
-          </div>
-        </div>
-        <div>
-          <div style={{ display: "flex", justifyContent: "center" }}>
-            <img
-              src={require(`../../assets/img24.jpg`)}
-              width="90%"
-              height="300px"
-              style={{ borderRadius: "8px" }}
-              alt=""
-            />
-          </div>
-        </div>
-        <div>
-          <div style={{ display: "flex", justifyContent: "center" }}>
-            <img
-              src={require(`../../assets/img25.jpg`)}
-              width="90%"
-              height="300px"
-              style={{ borderRadius: "8px" }}
-              alt=""
-            />
-          </div>
-        </div>
-        <div>
-          <div style={{ display: "flex", justifyContent: "center" }}>
-            <img
-              src={require(`../../assets/img26.jpg`)}
-              width="90%"
-              height="300px"
-              style={{ borderRadius: "8px" }}
-              alt=""
-            />
-          </div>
-        </div>
-      </Slider>
+      )}
     </div>
   );
 }

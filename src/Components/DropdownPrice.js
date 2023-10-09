@@ -15,8 +15,6 @@ const PriceData = [
 ];
 
 function DropdownPrice({ form, setForm }) {
-  const { price } = form;
-
   const handleChange = (e) => {
     setForm((form) => ({ ...form, [e.target.name]: e.target.value }));
   };
@@ -35,7 +33,7 @@ function DropdownPrice({ form, setForm }) {
           labelId="demo-simple-select-label"
           id="demo-simple-select"
           name="price"
-          value={price}
+          value={form.price}
           label="Price"
           onChange={handleChange}
         >

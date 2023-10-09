@@ -14,10 +14,12 @@ export default function CarsListingsIndex() {
   const heading = useParams();
   const [carsData, setCarsData] = useState([]);
   const [list, setList] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   const fetchData = async () => {
     GET("/cars/allcars").then((result) => {
       setCarsData(result);
+      setIsLoading(false);
     });
   };
 
@@ -41,10 +43,10 @@ export default function CarsListingsIndex() {
       <Container>
         <Grid container my={2} spacing={2}>
           <Grid item md={2.5} xs={12}>
-            <ListingSidebar />
+            <ListingSidebar {...{ list, setList }} />
           </Grid>
           <Grid item md={9} ml={isMobile ? 1 : 4} xs={12}>
-            <CarsList {...{ list }} />
+            <CarsList {...{ list, isLoading }} />
           </Grid>
         </Grid>
       </Container>

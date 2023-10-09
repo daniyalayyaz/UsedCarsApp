@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Box from "@mui/material/Box";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
@@ -29,11 +29,9 @@ const MakeData = [
   { _id: 21, title: "Ssangyong" },
 ];
 
-function DropdownMake() {
-  const [make, setMake] = useState("");
-
+function DropdownMake({ form, setForm }) {
   const handleChange = (e) => {
-    setMake(e.target.value);
+    setForm((form) => ({ ...form, [e.target.name]: e.target.value }));
   };
 
   return (
@@ -51,7 +49,7 @@ function DropdownMake() {
           labelId="demo-simple-select-label"
           id="demo-simple-select"
           name="make"
-          value={make}
+          value={form.make}
           label="Make"
           onChange={handleChange}
           sx={{ height: 40 }}

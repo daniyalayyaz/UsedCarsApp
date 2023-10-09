@@ -1,12 +1,12 @@
 import { Container, Grid, Stack, Typography } from "@mui/material";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import CarCard from "../../Components/CarCard";
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { GET } from "../../api/axios";
+import Loader from "../../Components/Loader";
 
 const CustomPrevArrow = (props) => {
   return (
@@ -55,8 +55,7 @@ const CustomNextArrow = (props) => {
   );
 };
 
-export default function FeaturedCars() {
-  const [carsData, setCarsData] = useState([]);
+export default function FeaturedCars({ isLoading, carsData }) {
   const settings = {
     dots: false,
     infinite: false,
@@ -91,20 +90,8 @@ export default function FeaturedCars() {
     ],
   };
 
-  const fetchData = async () => {
-    GET("/cars/allcars")
-      .then((result) => {
-        setCarsData(result);
-      })
-      .catch((error) => {
-        console.error("Axios error:", error);
-      });
-  };
-
-  useEffect(() => {
-    fetchData();
-  }, []);
-
+  if (isLoading) return <Loader />;
+  console.log(carsData);
   return (
     <>
       <Container sx={{ marginTop: "4rem" }}>
@@ -118,18 +105,19 @@ export default function FeaturedCars() {
             Featured Used Cars
           </Typography>
         </Stack>
-        <Slider {...settings}>
-          {carsData.map((item, index) => (
-            <Grid item key={index}>
-              <CarCard
-                name={item.name}
-                price={item.price}
-                country={item.country}
-                id={item._id}
-              />
-            </Grid>
-          ))}
-        </Slider>
+        {carsData ? (
+          <Slider {...settings}>
+            {carsData.map((item, index) => (
+              <Grid item key={index}>
+                <CarCard data={item} />
+              </Grid>
+            ))}
+          </Slider>
+        ) : (
+          <Typography variant="h6" alignItems="center">
+            No Cars Found
+          </Typography>
+        )}
       </Container>
     </>
   );

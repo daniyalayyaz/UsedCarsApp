@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Box from "@mui/material/Box";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
@@ -14,11 +14,9 @@ const BodyTypeData = [
   { _id: 6, title: "Coupe" },
 ];
 
-function DropdownBodyType() {
-  const [bodytype, setBodyType] = useState("");
-
+function DropdownBodyType({ form, setForm }) {
   const handleChange = (e) => {
-    setBodyType(e.target.value);
+    setForm((form) => ({ ...form, [e.target.name]: e.target.value }));
   };
 
   return (
@@ -36,7 +34,7 @@ function DropdownBodyType() {
           labelId="demo-simple-select-label"
           id="demo-simple-select"
           name="bodytype"
-          value={bodytype}
+          value={form.bodytype}
           label="BodyType"
           onChange={handleChange}
           sx={{ height: 40 }}

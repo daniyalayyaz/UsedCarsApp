@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Box from "@mui/material/Box";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
@@ -10,11 +10,9 @@ const SteeringData = [
   { _id: 2, title: "Left Hand Drive" },
 ];
 
-function DropdownSteering() {
-  const [steering, setSteering] = useState("");
-
+function DropdownSteering({ form, setForm }) {
   const handleChange = (e) => {
-    setSteering(e.target.value);
+    setForm((form) => ({ ...form, [e.target.name]: e.target.value }));
   };
 
   return (
@@ -32,7 +30,7 @@ function DropdownSteering() {
           labelId="demo-simple-select-label"
           id="demo-simple-select"
           name="steering"
-          value={steering}
+          value={form.steering}
           label="Steering"
           onChange={handleChange}
           sx={{ height: 40 }}

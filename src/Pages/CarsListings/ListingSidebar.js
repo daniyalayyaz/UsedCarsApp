@@ -13,11 +13,69 @@ import DropdownFuel from "../../Components/DropdownFuel";
 import DropdownPrice from "../../Components/DropdownPriceRange";
 import { SolidButton } from "../../Components/SolidButton";
 
-export default function ListingSidebar() {
-  const [searchText, setSearchText] = useState("");
+export default function ListingSidebar({ list, setList }) {
+  const [form, setForm] = useState({
+    make: "",
+    model: "",
+    bodytype: "",
+    color: "",
+    transmission: "",
+    price: "",
+    year: "",
+    mileage: "",
+    steering: "",
+    fuel: "",
+    cc: "",
+  });
 
-  const handleSearch = (e) => {
-    setSearchText(e.target.value);
+  const [filteredItems, setFilteredItems] = useState(list);
+
+  const handleSearch = () => {
+    const filteredData = list.filter((item) => {
+      const makeMatch = item.make === form.make;
+      const modelMatch = item.model === form.model;
+      const ccMatch = item.cc === form.cc;
+      const transmissionMatch = item.transmission === form.transmission;
+      const bodyTypeMatch = item.bodytype === form.bodytype;
+      const colorMatch = item.color === form.color;
+      const priceMatch = item.price === form.price;
+      const yearMatch = item.year === form.year;
+      const mileageMatch = item.mileage === form.mileage;
+      const steeringMatch = item.steering === form.steering;
+      const fuelMatch = item.fuel === form.fuel;
+
+      return (
+        makeMatch ||
+        modelMatch ||
+        ccMatch ||
+        transmissionMatch ||
+        bodyTypeMatch ||
+        colorMatch ||
+        priceMatch ||
+        yearMatch ||
+        mileageMatch ||
+        steeringMatch ||
+        fuelMatch
+      );
+    });
+
+    setList(filteredData);
+
+    console.log(filteredData, "data");
+    console.log(list, "list");
+    setForm({
+      make: "",
+      model: "",
+      bodytype: "",
+      color: "",
+      transmission: "",
+      price: "",
+      year: "",
+      mileage: "",
+      steering: "",
+      fuel: "",
+      cc: "",
+    });
   };
 
   return (
@@ -46,75 +104,75 @@ export default function ListingSidebar() {
             <Typography variant="body" fontWeight="bold">
               Make
             </Typography>
-            <DropdownMake />
+            <DropdownMake {...{ form, setForm }} />
           </Grid>
           <Grid item md={12} xs={6}>
             <Typography variant="body" fontWeight="bold" mt={2}>
               Model
             </Typography>
-            <DropdownModel />
+            <DropdownModel {...{ form, setForm }} />
           </Grid>
           <Grid item md={12} xs={6}>
             <Typography variant="body" fontWeight="bold" mt={2}>
               Body Type
             </Typography>
-            <DropdownBodyType />
+            <DropdownBodyType {...{ form, setForm }} />
           </Grid>
 
           <Grid item md={12} xs={6}>
             <Typography variant="body" fontWeight="bold" mt={2}>
               Color
             </Typography>
-            <DropdownColor />
+            <DropdownColor {...{ form, setForm }} />
           </Grid>
 
           <Grid item md={12} xs={6}>
             <Typography variant="body" fontWeight="bold" mt={2}>
               Transmission
             </Typography>
-            <DropdownTransmission />
+            <DropdownTransmission {...{ form, setForm }} />
           </Grid>
 
           <Grid item md={12} xs={6}>
             <Typography variant="body" fontWeight="bold" mt={2}>
               Price Range
             </Typography>
-            <DropdownPrice />
+            <DropdownPrice {...{ form, setForm }} />
           </Grid>
 
           <Grid item md={12} xs={6}>
             <Typography variant="body" fontWeight="bold" mt={2}>
               Year
             </Typography>
-            <DropdownYear />
+            <DropdownYear {...{ form, setForm }} />
           </Grid>
 
           <Grid item md={12} xs={6}>
             <Typography variant="body" fontWeight="bold" mt={2}>
               Mileage Range
             </Typography>
-            <DropdownMileage />
+            <DropdownMileage {...{ form, setForm }} />
           </Grid>
 
           <Grid item md={12} xs={6}>
             <Typography variant="body" fontWeight="bold" mt={2}>
               CC Range
             </Typography>
-            <DropdownCC />
+            <DropdownCC {...{ form, setForm }} />
           </Grid>
 
           <Grid item md={12} xs={6}>
             <Typography variant="body" fontWeight="bold" mt={2}>
               Steering
             </Typography>
-            <DropdownSteering />
+            <DropdownSteering {...{ form, setForm }} />
           </Grid>
 
           <Grid item md={12} xs={6}>
             <Typography variant="body" fontWeight="bold" mt={2}>
               Fuel
             </Typography>
-            <DropdownFuel />
+            <DropdownFuel {...{ form, setForm }} />
           </Grid>
 
           <Grid item md={12} xs={12} textAlign="center" mt="1rem">

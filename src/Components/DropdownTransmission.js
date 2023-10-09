@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Box from "@mui/material/Box";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
@@ -10,13 +10,10 @@ const TransmissionData = [
   { _id: 2, title: "Manual" },
 ];
 
-function DropdownTransmission() {
-  const [transmission, setTransmission] = useState("");
-
+function DropdownTransmission({ form, setForm }) {
   const handleChange = (e) => {
-    setTransmission(e.target.value);
+    setForm((form) => ({ ...form, [e.target.name]: e.target.value }));
   };
-
   return (
     <Box
       sx={{
@@ -32,7 +29,7 @@ function DropdownTransmission() {
           labelId="demo-simple-select-label"
           id="demo-simple-select"
           name="transmission"
-          value={transmission}
+          value={form.transmission}
           label="Transmission"
           onChange={handleChange}
           sx={{ height: 40 }}

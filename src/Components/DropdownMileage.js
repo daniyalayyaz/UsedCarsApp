@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Box from "@mui/material/Box";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
@@ -13,11 +13,9 @@ const MileageData = [
   { _id: 5, title: "20,000+" },
 ];
 
-function DropdownMileage() {
-  const [mileage, setMileage] = useState("");
-
+function DropdownMileage({ form, setForm }) {
   const handleChange = (e) => {
-    setMileage(e.target.value);
+    setForm((form) => ({ ...form, [e.target.name]: e.target.value }));
   };
 
   return (
@@ -35,7 +33,7 @@ function DropdownMileage() {
           labelId="demo-simple-select-label"
           id="demo-simple-select"
           name="mileage"
-          value={mileage}
+          value={form.mileage}
           label="Mileage"
           onChange={handleChange}
           sx={{ height: 40 }}

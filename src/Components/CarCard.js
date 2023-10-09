@@ -6,10 +6,9 @@ import {
   Typography,
 } from "@mui/material";
 import React from "react";
-import img from "../assets/img.png";
 import { useNavigate } from "react-router-dom";
 
-export default function CarCard({ name, price, country, id }) {
+export default function CarCard({ data }) {
   const navigate = useNavigate();
 
   const handleClick = (name, id) => {
@@ -19,22 +18,30 @@ export default function CarCard({ name, price, country, id }) {
     <Card sx={{ margin: "1rem", maxWidth: "100%", maxHeight: "100%" }}>
       <CardContent sx={{ textAlign: "center" }}>
         <Typography gutterBottom variant="h5">
-          {name}
+          {data.name}
         </Typography>
         <Typography variant="body1" color="text.secondary">
-          {price}
+          {data.price}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          {country}
+          {data.country}
         </Typography>
       </CardContent>
-      <CardMedia
-        component="img"
-        height="200"
-        src={img}
-        alt="Image Alt Text"
-        // onClick={() => handleRedirect()}
-      />
+      {data.coverImage ? (
+        <CardMedia
+          component="img"
+          height="200"
+          src={`http://localhost:5000/upload${data.coverImage}`}
+          alt="Image Alt Text"
+        />
+      ) : (
+        <CardMedia
+          component="img"
+          height="200"
+          src={require("../assets/noImage.jpeg")}
+          alt="Image Alt Text"
+        />
+      )}
       <CardContent sx={{ textAlign: "center" }}>
         <Button
           size="small"
@@ -47,7 +54,7 @@ export default function CarCard({ name, price, country, id }) {
             marginRight: "10px",
             fontFamily: "Semibold",
           }}
-          onClick={() => handleClick(country, id)}
+          onClick={() => handleClick(data.country, data._id)}
         >
           View Details
         </Button>

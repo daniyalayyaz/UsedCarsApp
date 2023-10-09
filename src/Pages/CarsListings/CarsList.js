@@ -6,8 +6,9 @@ import SpeedIcon from "@mui/icons-material/Speed";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import { useNavigate } from "react-router-dom";
 import moment from "moment/moment";
+import Loader from "../../Components/Loader";
 
-export default function CarsList({ list }) {
+export default function CarsList({ list, isLoading }) {
   const isMobile = useIsMobile();
   const navigate = useNavigate();
 
@@ -15,7 +16,7 @@ export default function CarsList({ list }) {
     navigate(`/carlistings/${name}/${id}`);
   };
 
-  console.log(list);
+  if (isLoading) return <Loader />;
   return (
     <>
       {list.map((item, index) => (
@@ -31,14 +32,25 @@ export default function CarsList({ list }) {
         >
           <Grid container spacing={2} m={2} alignItems="cnter">
             <Grid item md={2} xs={10} justifyContent="center">
-              <img
-                src={require(`../../assets/list.jpg`)}
-                alt="Logo"
-                style={{
-                  width: isMobile ? "100%" : 130,
-                  height: "100%",
-                }}
-              />
+              {item.coverImage ? (
+                <img
+                  src={`http://localhost:5000/upload${item.coverImage}`}
+                  alt="Logo"
+                  style={{
+                    width: isMobile ? "100%" : 130,
+                    height: "100%",
+                  }}
+                />
+              ) : (
+                <img
+                  src={require(`../../assets/noImage.jpeg`)}
+                  alt="Logo"
+                  style={{
+                    width: isMobile ? 120 : 130,
+                    height: 120,
+                  }}
+                />
+              )}
             </Grid>
             <Grid item md={6} xs={6} justifyContent="center">
               <Typography variant="h6" fontWeight="bold">
