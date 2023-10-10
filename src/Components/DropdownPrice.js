@@ -22,7 +22,7 @@ function DropdownPrice({ form, setForm }) {
   return (
     <Box
       sx={{
-        minWidth: 200,
+        minWidth: 150,
         backgroundColor: "white",
         borderRadius: "8px",
       }}

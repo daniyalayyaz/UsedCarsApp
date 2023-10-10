@@ -20,13 +20,13 @@ function DropdownCountry({ form, setForm }) {
   return (
     <Box
       sx={{
-        minWidth: 200,
+        minWidth: 150,
         backgroundColor: "white",
         borderRadius: "8px",
       }}
     >
       <FormControl fullWidth>
-        <InputLabel htmlFor="demo-simple-select">Select Country </InputLabel>
+        <InputLabel htmlFor="demo-simple-select"> Select Country </InputLabel>
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"

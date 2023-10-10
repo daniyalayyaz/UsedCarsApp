@@ -1,6 +1,6 @@
 import { Box, Button, Grid, Stack, TextField, Typography } from "@mui/material";
 import React, { useState } from "react";
-import bg from "../../assets/bg.png";
+import bg from "../../assets/img.avif";
 import DropdownCountry from "../../Components/DropdownCountry";
 import DropdownPrice from "../../Components/DropdownPrice";
 import { useTheme } from "@mui/material/styles";
@@ -71,43 +71,51 @@ export default function FindCars({ carsData, setCarsData }) {
         >
           Find Used Cars
         </Typography>
-        <Grid container spacing={1} justifyContent="center" pl={4} mt={3}>
-          <Grid item xs={10} md={3}>
-            <TextField
-              fullWidth
-              variant="outlined"
-              label="Search"
-              placeholder="Search..."
-              value={searchText}
-              onChange={handleSearchText}
-              sx={{ background: "white", borderRadius: "8px" }}
-            />
-          </Grid>
-          <Grid item md={2} xs={10}>
-            <DropdownPrice {...{ form, setForm }} />
-          </Grid>
+        <Box
+          sx={{
+            backgroundColor: "white",
+            borderRadius: "10px",
+            width: "50%",
+            height: "80px",
+          }}
+        >
+          <Grid container spacing={1} justifyContent="center" my={1}>
+            <Grid item xs={10} md={3}>
+              <TextField
+                variant="outlined"
+                label="Search"
+                placeholder="Search..."
+                value={searchText}
+                onChange={handleSearchText}
+                sx={{ background: "white", borderRadius: "8px" }}
+              />
+            </Grid>
+            <Grid item md={2} xs={10}>
+              <DropdownPrice {...{ form, setForm }} ml={3} />
+            </Grid>
 
-          <Grid item xs={10} md={2}>
-            <DropdownCountry {...{ form, setForm }} />
+            <Grid item xs={10} md={2} ml={6}>
+              <DropdownCountry {...{ form, setForm }} />
+            </Grid>
+            <Grid item md={3} xs={10} textAlign={!matches && "center"} ml={6}>
+              <Button
+                size="small"
+                variant="contained"
+                sx={{
+                  background: "primary.main",
+                  height: "56px",
+                  width: "8rem",
+                  borderRadius: "0.5rem",
+                  color: "white",
+                  fontFamily: "Semibold",
+                }}
+                onClick={handleSearch}
+              >
+                Search
+              </Button>
+            </Grid>
           </Grid>
-          <Grid item md={3} xs={10} textAlign={!matches && "center"}>
-            <Button
-              size="small"
-              variant="contained"
-              sx={{
-                background: "primary.main",
-                height: "56px",
-                width: "8rem",
-                borderRadius: "0.5rem",
-                color: "white",
-                fontFamily: "Semibold",
-              }}
-              onClick={handleSearch}
-            >
-              Search
-            </Button>
-          </Grid>
-        </Grid>
+        </Box>
       </Box>
     </Stack>
   );
