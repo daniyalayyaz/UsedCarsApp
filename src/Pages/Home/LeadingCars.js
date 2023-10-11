@@ -8,14 +8,14 @@ export default function LeadingCars() {
   return (
     <>
       <Grid container justifyContent="center" mb={4}>
-        <Grid item md={6} xs={12}>
+        <Grid item md={5} xs={12}>
           <img
             src={img}
             style={{ width: isMobile ? "100%" : "40rem", height: "32rem" }}
             alt=""
           />
         </Grid>
-        <Grid item md={6} xs={12} bgcolor="aliceblue">
+        <Grid item md={7} xs={12} bgcolor="aliceblue">
           <div
             style={{
               marginLeft: isMobile ? "2rem" : "4rem",
@@ -25,35 +25,48 @@ export default function LeadingCars() {
           >
             <Typography variant="h6">WORLD'S LEADING USED CARS</Typography>
             <Typography variant="h4" color="primary" mb={2}>
-              WELCOME TO AUTO CAR
+              WELCOME TO BAVI MOTORS
             </Typography>
             <Typography
               variant="body1"
               pr={isMobile ? "2rem" : "8rem"}
               lineHeight={1.5}
             >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
-              sapien metus, consectetur et efficitur ut, mattis et nisl. Etiam
-              aliquet erat lorem, sed rhoncus justo hendrerit ac. Donec vel
-              lacus tincidunt, sagittis lorem sed, ultricies magna. Suspendisse
-              gravida massa sit amet urna faucibus, fermentum fringilla tellus
-              congue. Integer lacinia iaculis dolor, in convallis metus laoreet
-              quis. Vestibulum pulvinar, felis sit amet dignissim feugiat, est
-              urna congue orci, nec mattis felis nunc sed nulla.
+              Bavi Motors, a UK-based independent family-run business, excels in
+              the used car market by offering personalized customer service,
+              competitive pricing, and unparalleled flexibility. By directly
+              engaging with owners, customers enjoy a non-impersonal experience.
+              Bavi Motors, as a scrappy startup, avoids high-pressure sales
+              tactics, ensuring cost savings. Their autonomy results in swift
+              decision-making and adaptability, making them an ideal choice for
+              sourcing vehicles or handling unique requests. Experience a
+              customer-centric approach with Bavi Motors, where individual
+              requirements for used Japanese cars are meticulously assessed.
             </Typography>
 
-            <Typography variant="body1" mt={2}>
-              Nam rutrum tortor eget lorem mattis mattis.
-            </Typography>
-            <Typography variant="body1" mt={1}>
-              Nam rutrum tortor eget lorem mattis mattis.
-            </Typography>
-            <Typography variant="body1" mt={1}>
-              Nam rutrum tortor eget lorem mattis mattis.
-            </Typography>
-            <Typography variant="body1" mt={1}>
-              Nam rutrum tortor eget lorem mattis mattis.
-            </Typography>
+            <ul>
+              <li>
+                <Typography variant="body1" mt={1}>
+                  Competitive Pricing Without High-Pressure Sales
+                </Typography>
+              </li>
+              <li>
+                <Typography variant="body1" mt={1}>
+                  Autonomy to Source Vehicles and Provide Fast Service
+                </Typography>
+              </li>
+              <li>
+                <Typography variant="body1" mt={1}>
+                  Independence for Fast Decision-Making and Unique Requests
+                </Typography>
+              </li>
+              <li>
+                <Typography variant="body1" mt={2}>
+                  Small, Family-Run Business for Personalized Customer
+                  Experience
+                </Typography>
+              </li>
+            </ul>
           </div>
         </Grid>
       </Grid>

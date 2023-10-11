@@ -21,10 +21,11 @@ export default function Footer() {
             <Typography variant="h6" gutterBottom>
               About Us
             </Typography>
-            <Typography variant="body2">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
-              varius, orci id facilisis egestas, neque purus sagittis arcu, nec
-              maximus quam odio nec elit Pellentesque eget ipsum mattis.
+            <Typography variant="body2" width="90%">
+              At Bavi Motors, we take pride in our personalized customer care
+              and evaluating each person's requirements individually. Come
+              experience the benefits of choosing a small, family-owned business
+              for your used Japanese car.
             </Typography>
           </Grid>
           <Grid item xs={12} sm={4}>
@@ -34,8 +35,10 @@ export default function Footer() {
             <Typography variant="body2">
               123 Main Street, Anytown, UK
             </Typography>
-            <Typography variant="body2">Email: info@example.com</Typography>
-            <Typography variant="body2">Phone: +1 234 567 8901</Typography>
+            <Typography variant="body2">
+              Email: Hamza.iqbal@bavimotors.com
+            </Typography>
+            <Typography variant="body2">Phone: 07466242984</Typography>
           </Grid>
           <Grid item xs={12} sm={4}>
             <Typography variant="h6" gutterBottom>
@@ -62,7 +65,7 @@ export default function Footer() {
           <Typography variant="body2" align="center">
             {"Copyright © "}
             <Link color="inherit" href="/" style={{ color: "white" }}>
-              Used Car App
+              Bavi Motors
             </Link>{" "}
             {new Date().getFullYear()}
             {"."}

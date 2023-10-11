@@ -60,7 +60,7 @@ export default function ContactCardDetail() {
                   EMAIL ADDRESS:
                 </Typography>
                 <Typography variant="body">
-                  investigate@your-site.com investigate@your-site.com
+                  Hamza.iqbal@bavimotors.com
                 </Typography>
               </div>
             </Card>
@@ -78,7 +78,7 @@ export default function ContactCardDetail() {
                 <Typography variant="h6" fontWeight="bold">
                   PHONE NO:
                 </Typography>
-                <Typography variant="body">+12 345 67 09</Typography>
+                <Typography variant="body">07466242984</Typography>
               </div>
             </Card>
           </Grid>

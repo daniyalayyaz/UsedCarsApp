@@ -41,7 +41,7 @@ export default function Navbar() {
             />
             <Link to="/" style={{ textDecoration: "none", color: "white" }}>
               <Typography variant="h6" color="white">
-                USED CAR APP
+                BAVI MOTORS
               </Typography>
             </Link>
           </div>

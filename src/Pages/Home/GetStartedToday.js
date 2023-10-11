@@ -34,9 +34,8 @@ export default function GetStartedToday() {
       >
         <Typography variant="h4">Get Started Today</Typography>
         <Typography mt={2}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
-          aliquet, massa ac ornare feugiat, nunc dui auctor ipsum, sed posuere
-          eros sapien id quam.
+          Enjoy a personalized, cost-effective, and hassle-free car-buying
+          experience with Bavi Motors, your trusted small, family-owned business
         </Typography>
         <Grid container mt={2} spacing={2} justifyContent="center">
           <Grid item md={6} xs={12}>
