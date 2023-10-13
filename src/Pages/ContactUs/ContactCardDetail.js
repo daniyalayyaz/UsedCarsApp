@@ -41,7 +41,10 @@ export default function ContactCardDetail() {
                   {" "}
                   ADDRESS:
                 </Typography>
-                <Typography variant="body"> London,UK</Typography>
+                <Typography variant="body">
+                  {" "}
+                  49 the Fitzgerald, Sheffield , S3 8PQ
+                </Typography>
               </div>
             </Card>
           </Grid>

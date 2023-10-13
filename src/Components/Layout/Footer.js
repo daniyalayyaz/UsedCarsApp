@@ -33,7 +33,7 @@ export default function Footer() {
               Contact Us
             </Typography>
             <Typography variant="body2">
-              123 Main Street, Anytown, UK
+              49 the Fitzgerald, Sheffield , S3 8PQ
             </Typography>
             <Typography variant="body2">
               Email: Hamza.iqbal@bavimotors.com
@@ -45,18 +45,18 @@ export default function Footer() {
               Follow Us
             </Typography>
             <Link
-              href="https://www.facebook.com/"
+              to="https://www.facebook.com/"
               style={{ marginRight: "1.5rem", color: "white" }}
             >
               <FacebookIcon />
             </Link>
             <Link
-              href="https://www.instagram.com/"
+              to="https://www.instagram.com/"
               style={{ marginRight: "1.5rem", color: "white" }}
             >
               <InstagramIcon />
             </Link>
-            <Link href="https://www.twitter.com/" style={{ color: "white" }}>
+            <Link to="https://www.twitter.com/" style={{ color: "white" }}>
               <TwitterIcon />
             </Link>
           </Grid>

@@ -3,13 +3,10 @@ import React, { useState } from "react";
 import bg from "../../assets/img.avif";
 import DropdownCountry from "../../Components/DropdownCountry";
 import DropdownPrice from "../../Components/DropdownPrice";
-import { useTheme } from "@mui/material/styles";
-import useMediaQuery from "@mui/material/useMediaQuery";
-
+import { useIsMobile } from "../../contexts/isMobile";
 export default function FindCars({ carsData, setCarsData }) {
   const bgImg = `url(${bg})`;
-  const theme = useTheme();
-  const matches = useMediaQuery(theme.breakpoints.up("sm"));
+  const matches = useIsMobile();
   const [form, setForm] = useState({
     country: "",
     price: "",
@@ -76,7 +73,7 @@ export default function FindCars({ carsData, setCarsData }) {
             backgroundColor: "white",
             borderRadius: "10px",
             width: "50%",
-            height: "80px",
+            height: matches ? "17rem" : "80px",
           }}
         >
           <Grid container spacing={1} justifyContent="center" my={1}>
@@ -94,10 +91,10 @@ export default function FindCars({ carsData, setCarsData }) {
               <DropdownPrice {...{ form, setForm }} ml={3} />
             </Grid>
 
-            <Grid item xs={10} md={2} ml={6}>
+            <Grid item xs={10} md={2} ml={!matches && 6}>
               <DropdownCountry {...{ form, setForm }} />
             </Grid>
-            <Grid item md={3} xs={10} textAlign={!matches && "center"} ml={6}>
+            <Grid item md={3} xs={10} textAlign={"center"} ml={!matches && 6}>
               <Button
                 size="small"
                 variant="contained"

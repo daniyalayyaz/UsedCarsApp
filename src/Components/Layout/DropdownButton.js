@@ -3,7 +3,7 @@ import Box from "@mui/material/Box";
 import MenuItem from "@mui/material/MenuItem";
 import { IconButton, Menu } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
-import ArrowDropDownCircleOutlinedIcon from "@mui/icons-material/ArrowDropDownCircleOutlined";
+import MenuIcon from "@mui/icons-material/Menu";
 
 function DropdownButton({ setHeading }) {
   const [anchorEl, setAnchorEl] = useState(null);
@@ -25,7 +25,7 @@ function DropdownButton({ setHeading }) {
   return (
     <>
       <IconButton onClick={handleOpenMenu}>
-        <ArrowDropDownCircleOutlinedIcon sx={{ color: "white" }} />
+        <MenuIcon sx={{ color: "white" }} />
       </IconButton>
       <Menu
         anchorEl={anchorEl}
