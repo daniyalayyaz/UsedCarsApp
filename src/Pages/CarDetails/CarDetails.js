@@ -34,67 +34,67 @@ export default function CarDetails({ data, imagesArray }) {
             About this Car
           </Typography>
           <Grid container my={2} spacing={2}>
-            <Grid item md={3} xs={3}>
+            <Grid item md={3} xs={3} fontWeight="bold">
               Make
             </Grid>
             <Grid item md={3} xs={3}>
               {data.make}
             </Grid>
-            <Grid item md={3} xs={3}>
+            <Grid item md={3} xs={3} fontWeight="bold">
               Model
             </Grid>
             <Grid item md={3} xs={3}>
               {data.model}
             </Grid>
-            <Grid item md={3} xs={3}>
+            <Grid item md={3} xs={3} fontWeight="bold">
               BodyType
             </Grid>
             <Grid item md={3} xs={3}>
               {data.bodytype}
             </Grid>
-            <Grid item md={3} xs={3}>
+            <Grid item md={3} xs={3} fontWeight="bold">
               Color
             </Grid>
             <Grid item md={3} xs={3}>
               {data.color}
             </Grid>
-            <Grid item md={3} xs={3}>
+            <Grid item md={3} xs={3} fontWeight="bold">
               Fuel
             </Grid>
             <Grid item md={3} xs={3}>
               {data.fuel}
             </Grid>
-            <Grid item md={3} xs={3}>
+            <Grid item md={3} xs={3} fontWeight="bold">
               Mileage
             </Grid>
             <Grid item md={3} xs={3}>
               {data.mileage}
             </Grid>
-            <Grid item md={3} xs={3}>
+            <Grid item md={3} xs={3} fontWeight="bold">
               Year
             </Grid>
             <Grid item md={3} xs={3}>
               {data.year}
             </Grid>
-            <Grid item md={3} xs={3}>
+            <Grid item md={3} xs={3} fontWeight="bold">
               CC
             </Grid>
             <Grid item md={3} xs={3}>
               {data.cc}
             </Grid>
-            <Grid item md={3} xs={3} overflow="clip">
+            <Grid item md={3} xs={3} overflow="clip" fontWeight="bold">
               Transmission
             </Grid>
             <Grid item md={3} xs={3}>
               {data.transmission}
             </Grid>
-            <Grid item md={3} xs={3}>
+            <Grid item md={3} xs={3} fontWeight="bold">
               Country
             </Grid>
             <Grid item md={3} xs={3}>
               {data.country}
             </Grid>
-            <Grid item md={3} xs={3}>
+            <Grid item md={3} xs={3} fontWeight="bold">
               Steering
             </Grid>
             <Grid item md={3} xs={6}>

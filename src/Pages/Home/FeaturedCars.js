@@ -105,7 +105,7 @@ export default function FeaturedCars({ isLoading, carsData }) {
             Featured Used Cars
           </Typography>
         </Stack>
-        {carsData ? (
+        {carsData.length > 0 ? (
           <Slider {...settings}>
             {carsData.map((item, index) => (
               <Grid item key={index}>
@@ -114,7 +114,7 @@ export default function FeaturedCars({ isLoading, carsData }) {
             ))}
           </Slider>
         ) : (
-          <Typography variant="h6" alignItems="center">
+          <Typography variant="h6" alignItems="center" justifyContent="center">
             No Cars Found
           </Typography>
         )}

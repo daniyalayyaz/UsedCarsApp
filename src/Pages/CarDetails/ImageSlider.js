@@ -75,7 +75,7 @@ function ImageSlider({ data, MultiImages, coverImage }) {
           <div>
             <div style={{ display: "flex", justifyContent: "center" }}>
               <img
-                src={`http://localhost:5000/upload${coverImage}`}
+                src={`https://red-jolly-tortoise.cyclic.app/upload${coverImage}`}
                 width="90%"
                 height="300px"
                 style={{ borderRadius: "8px" }}

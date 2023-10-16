@@ -60,9 +60,6 @@ export default function ListingSidebar({ list, setList }) {
     });
 
     setList(filteredData);
-
-    console.log(filteredData, "data");
-    console.log(list, "list");
     setForm({
       make: "",
       model: "",

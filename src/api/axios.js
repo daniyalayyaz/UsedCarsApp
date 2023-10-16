@@ -1,6 +1,6 @@
 import Axios from "axios";
 
-const baseURL = "http://localhost:5000";
+const baseURL = "https://red-jolly-tortoise.cyclic.app";
 
 const POST = async (route, formData, header = {}) => {
   const result = await Axios({
