@@ -114,7 +114,13 @@ export default function FeaturedCars({ isLoading, carsData }) {
             ))}
           </Slider>
         ) : (
-          <Typography variant="h6" alignItems="center" justifyContent="center">
+          <Typography
+            variant="h6"
+            alignItems="center"
+            justifyContent="center"
+            fontWeight="bold"
+            mb={4}
+          >
             No Cars Found
           </Typography>
         )}

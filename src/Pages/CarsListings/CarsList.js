@@ -118,9 +118,11 @@ export default function CarsList({ list, isLoading }) {
           ))}
         </>
       ) : (
-        <Typography variant="h5" alignItems="center" justifyContent="center">
-          No Cars Found
-        </Typography>
+        <Grid container spacing={2} justifyContent="center" mt={6}>
+          <Typography variant="h5" fontWeight="bold">
+            No Cars Found
+          </Typography>
+        </Grid>
       )}
     </>
   );
