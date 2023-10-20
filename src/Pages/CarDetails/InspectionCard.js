@@ -1,8 +1,10 @@
 import { Card, Grid, Typography } from "@mui/material";
 import React from "react";
 import car from "../../assets/car-inspection.jpg";
+import { useIsMobile } from "../../contexts/isMobile";
 
 export default function InspectionCard() {
+  const isMobile = useIsMobile();
   return (
     <Card
       elevation={6}
@@ -17,7 +19,7 @@ export default function InspectionCard() {
         Car Inspection is Important Before buy a Used Car
       </Typography>
       <Grid container spacing={2} m={1} mb={3}>
-        <Grid item md={7} width="100%">
+        <Grid item md={7} width={isMobile ? "90%" : "100%"}>
           <Typography>
             Before you drive away with that dream used car, don't forget the
             crucial pit stop – a thorough car inspection. Your peace of mind

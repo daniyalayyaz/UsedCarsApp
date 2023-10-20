@@ -45,7 +45,7 @@ export default function CarsListingsIndex() {
           <Grid item md={2.5} xs={12}>
             <ListingSidebar {...{ list, setList }} />
           </Grid>
-          <Grid item md={9} ml={isMobile ? 1 : 4} xs={12}>
+          <Grid item md={9} mx={3} xs={12}>
             <CarsList {...{ list, isLoading }} />
           </Grid>
         </Grid>

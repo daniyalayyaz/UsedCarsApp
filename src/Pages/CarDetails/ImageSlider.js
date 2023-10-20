@@ -4,6 +4,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+import { useIsMobile } from "../../contexts/isMobile";
 
 const CustomPrevArrow = (props) => {
   return (
@@ -53,6 +54,7 @@ const CustomNextArrow = (props) => {
 };
 
 function ImageSlider({ data, MultiImages, coverImage }) {
+  const isMobile = useIsMobile();
   const [settings] = useState({
     dots: true,
     dotsClass: "slick-dots custom-dots",

@@ -102,7 +102,7 @@ export default function FindCars() {
                 sx={{ background: "white", borderRadius: "8px" }}
               />
             </Grid>
-            <Grid item md={2} xs={10}>
+            <Grid item md={2} xs={10} mb={2}>
               <DropdownPrice {...{ form, setForm }} ml={3} />
             </Grid>
 

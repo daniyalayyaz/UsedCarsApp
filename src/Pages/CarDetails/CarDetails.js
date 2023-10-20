@@ -2,8 +2,10 @@ import { Box, Grid, Stack, Typography } from "@mui/material";
 import React from "react";
 import InspectionCard from "./InspectionCard";
 import ImageSlider from "./ImageSlider";
+import { useIsMobile } from "../../contexts/isMobile";
 
 export default function CarDetails({ data, imagesArray }) {
+  const isMobile = useIsMobile();
   return (
     <Stack
       direction="row"
@@ -13,15 +15,14 @@ export default function CarDetails({ data, imagesArray }) {
         backgroundSize: "cover",
         backgroundPosition: "center",
         width: "100%",
-        my: 3,
       }}
     >
       <Box
         sx={{
           display: "flex",
           flexDirection: "column",
-          width: "90%",
-          my: "2rem",
+          width: isMobile ? "100%" : "90%",
+          my: "1rem",
         }}
       >
         <ImageSlider

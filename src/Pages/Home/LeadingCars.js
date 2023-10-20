@@ -18,10 +18,10 @@ export default function LeadingCars() {
         <Grid item md={7} xs={12} bgcolor="white">
           <Container
             style={{
-              marginLeft: isMobile ? "2rem" : "2rem",
+              marginLeft: "2rem",
               marginTop: "1rem",
               marginBottom: "2rem",
-              width: "94%",
+              width: isMobile ? "80%" : "94%",
             }}
           >
             <Typography variant="h6">WORLD'S LEADING USED CARS</Typography>

@@ -26,11 +26,17 @@ export default function ExploreCars() {
         mb: "4rem",
       }}
     >
-      <Container style={{ marginLeft: "3rem", marginTop: "6rem" }}>
+      <div
+        style={{ marginLeft: "2rem", marginTop: !isMobile ? "6rem" : "2rem" }}
+      >
         <Typography
           variant="h6"
           color="white"
-          sx={{ width: "35%", fontWeight: "bold", fontSize: "36px" }}
+          sx={{
+            width: !isMobile ? "35%" : "60%",
+            fontWeight: "bold",
+            fontSize: isMobile ? "24px" : "36px",
+          }}
         >
           Your Ideal Ride Awaits at Bavi Motors
         </Typography>
@@ -57,10 +63,10 @@ export default function ExploreCars() {
             }}
             onClick={handleSearch}
           >
-            Find Your Perfect Wheels
+            {isMobile ? "Explore" : "Find Your Perfect Wheels"}
           </Button>
         </Grid>
-      </Container>
+      </div>
     </Box>
   );
 }
