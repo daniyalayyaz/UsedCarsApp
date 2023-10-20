@@ -33,6 +33,7 @@ export default function CarCard({ data }) {
           height="200"
           src={`https://red-jolly-tortoise.cyclic.app/upload${data.coverImage}`}
           alt="Image Alt Text"
+          sx={{ objectFit: "cover" }}
         />
       ) : (
         <CardMedia
@@ -47,12 +48,14 @@ export default function CarCard({ data }) {
           size="small"
           variant="contained"
           sx={{
-            background: "primary.main",
-
+            background: "#D0AC4C",
             borderRadius: "0.5rem",
             color: "white",
             marginRight: "10px",
             fontFamily: "Semibold",
+            "&:hover ": {
+              color: "#D0AC4C",
+            },
           }}
           onClick={() => handleClick(data.country, data._id)}
         >

@@ -10,7 +10,7 @@ const MileageData = [
   { _id: 2, title: "5000-10,000" },
   { _id: 3, title: "10,000-15,000" },
   { _id: 4, title: "15,000-20,000" },
-  { _id: 5, title: "20,000+" },
+  { _id: 5, title: "20,000 over" },
 ];
 
 function DropdownMileage({ form, setForm }) {

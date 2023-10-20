@@ -51,7 +51,6 @@ export const FAQData = [
       "• <strong>You can purchase the vehicle</strong> - Once it clears UK customs, usually before it lands in our UK warehouse/inspection facility.",
       "• <strong>Vehicle arrives in our UK warehouse for inspection</strong> - Takes 2-3 days for inspection and reconditioning if needed.",
       "• <strong>Registration process with DVLA</strong> - For a vehicle over 10 years old, this takes around 1 month. If it's more than 10 years, it takes 2 weeks for its registration.",
-      "• <strong>Once registered</strong> - We contact you to schedule delivery or collection of your new used vehicle, ready to drive off our lot within 7 days of purchase at the latest.",
       "• Please note this is an estimated timeline. Shipping times may vary, and during busy periods, some steps could take longer. We're happy to discuss specifics and answer any other questions regarding ordering a Japanese import.",
     ],
   },

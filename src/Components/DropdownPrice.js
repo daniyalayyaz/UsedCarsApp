@@ -6,12 +6,12 @@ import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 
 const PriceData = [
-  { _id: 1, title: "Under $1000" },
-  { _id: 2, title: "Under $2000" },
-  { _id: 3, title: "Under $3000" },
-  { _id: 4, title: "Under $4000" },
-  { _id: 5, title: "Under $5000" },
-  { _id: 6, title: "Over $6000" },
+  { _id: 1, title: "5000-10000" },
+  { _id: 2, title: "10000-15000" },
+  { _id: 3, title: "15000-20000" },
+  { _id: 4, title: "25000-30000" },
+  { _id: 5, title: "30000-35000" },
+  { _id: 6, title: "Over $35000" },
 ];
 
 function DropdownPrice({ form, setForm }) {
@@ -25,6 +25,7 @@ function DropdownPrice({ form, setForm }) {
         minWidth: 150,
         backgroundColor: "white",
         borderRadius: "8px",
+        height: 40,
       }}
     >
       <FormControl fullWidth>

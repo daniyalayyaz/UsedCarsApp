@@ -1,4 +1,4 @@
-import { Grid, Typography } from "@mui/material";
+import { Container, Grid, Typography } from "@mui/material";
 import React from "react";
 import img from "../../assets/leadingimg.png";
 import { useIsMobile } from "../../contexts/isMobile";
@@ -15,23 +15,20 @@ export default function LeadingCars() {
             alt=""
           />
         </Grid>
-        <Grid item md={7} xs={12} bgcolor="aliceblue">
-          <div
+        <Grid item md={7} xs={12} bgcolor="white">
+          <Container
             style={{
-              marginLeft: isMobile ? "2rem" : "4rem",
-              marginTop: "2rem",
+              marginLeft: isMobile ? "2rem" : "2rem",
+              marginTop: "1rem",
               marginBottom: "2rem",
+              width: "94%",
             }}
           >
             <Typography variant="h6">WORLD'S LEADING USED CARS</Typography>
             <Typography variant="h4" color="primary" mb={2}>
               WELCOME TO BAVI MOTORS
             </Typography>
-            <Typography
-              variant="body1"
-              pr={isMobile ? "2rem" : "8rem"}
-              lineHeight={1.5}
-            >
+            <Typography variant="body1" pr={"2rem"} lineHeight={1.5}>
               Bavi Motors, a UK-based independent family-run business, excels in
               the used car market by offering personalized customer service,
               competitive pricing, and unparalleled flexibility. By directly
@@ -67,7 +64,7 @@ export default function LeadingCars() {
                 </Typography>
               </li>
             </ul>
-          </div>
+          </Container>
         </Grid>
       </Grid>
     </>

@@ -6,17 +6,14 @@ import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 
 const YearData = [
-  { _id: 1, title: "2000-2002" },
-  { _id: 2, title: "2002-2004" },
-  { _id: 3, title: "2004-2006" },
-  { _id: 4, title: "2006-2008" },
-  { _id: 5, title: "2008-2010" },
-  { _id: 6, title: "2010-2012" },
-  { _id: 7, title: "2012-2014" },
-  { _id: 8, title: "2014-2016" },
-  { _id: 9, title: "2016-2018" },
-  { _id: 10, title: "2018-2020" },
-  { _id: 11, title: "2020-2022" },
+  { _id: 1, title: "2000-2003" },
+  { _id: 2, title: "2003-2006" },
+  { _id: 3, title: "2006-2009" },
+  { _id: 4, title: "2009-2012" },
+  { _id: 5, title: "2012-2015" },
+  { _id: 6, title: "2015-2018" },
+  { _id: 7, title: "2018-2021" },
+  { _id: 8, title: "2021 onwards" },
 ];
 
 function DropdownYear({ form, setForm }) {

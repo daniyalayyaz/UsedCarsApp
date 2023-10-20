@@ -40,7 +40,15 @@ export default function Navbar() {
               style={{ width: 40, marginRight: 30, borderRadius: "50px" }}
             />
             <Link to="/" style={{ textDecoration: "none", color: "white" }}>
-              <Typography variant="h6" color="white">
+              <Typography
+                variant="h6"
+                color="white"
+                sx={{
+                  "&:hover ": {
+                    color: "#D0AC4C",
+                  },
+                }}
+              >
                 BAVI MOTORS
               </Typography>
             </Link>
@@ -67,13 +75,13 @@ export default function Navbar() {
                   </Grid>
                   <Grid>
                     <SolidButton
-                      label="Japense Cars"
+                      label="Japan Stock"
                       onClick={() => handleJapenseCars("Japan")}
                     />
                   </Grid>
                   <Grid>
                     <SolidButton
-                      label="UK Cars"
+                      label="UK Stock"
                       onClick={() => handleUKCars("UK")}
                     />
                   </Grid>

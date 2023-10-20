@@ -6,7 +6,7 @@ export default function DetailHeader({ name }) {
     <Stack
       direction="row"
       sx={{
-        backgroundColor: "aliceblue",
+        backgroundColor: "white",
         backgroundSize: "cover",
         backgroundPosition: "center",
         width: "100%",

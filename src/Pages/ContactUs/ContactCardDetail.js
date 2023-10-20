@@ -11,7 +11,7 @@ export default function ContactCardDetail() {
       direction="row"
       justifyContent="center"
       sx={{
-        backgroundColor: "aliceblue",
+        backgroundColor: "white",
         backgroundSize: "cover",
         backgroundPosition: "center",
         width: "100%",
@@ -26,17 +26,25 @@ export default function ContactCardDetail() {
           my: "4rem",
         }}
       >
-        <Grid container spacing={2} textAlign="center">
+        <Grid container spacing={2} textAlign="center" justifyContent="center">
           <Grid item>
-            <Card sx={{ width: "20rem", height: "11rem" }}>
+            <Card
+              elevation={4}
+              sx={{
+                width: "20rem",
+                height: "11rem",
+                backgroundColor: "#000000",
+              }}
+            >
               <div
                 style={{
                   marginTop: "2rem",
                   marginBottom: "2rem",
                   margin: "2rem",
+                  color: "white",
                 }}
               >
-                <HomeIcon />
+                <HomeIcon sx={{ color: "white" }} />
                 <Typography variant="h6" fontWeight="bold">
                   {" "}
                   ADDRESS:
@@ -49,12 +57,20 @@ export default function ContactCardDetail() {
             </Card>
           </Grid>
           <Grid item>
-            <Card sx={{ width: "20rem", height: "11rem" }}>
+            <Card
+              elevation={4}
+              sx={{
+                width: "20rem",
+                height: "11rem",
+                backgroundColor: "#000000",
+              }}
+            >
               <div
                 style={{
                   marginTop: "2rem",
                   marginBottom: "2rem",
                   margin: "2rem",
+                  color: "white",
                 }}
               >
                 <MailIcon />
@@ -69,12 +85,20 @@ export default function ContactCardDetail() {
             </Card>
           </Grid>
           <Grid item>
-            <Card sx={{ width: "20rem", height: "11rem" }}>
+            <Card
+              elevation={4}
+              sx={{
+                width: "20rem",
+                height: "11rem",
+                backgroundColor: "#000000",
+              }}
+            >
               <div
                 style={{
                   marginTop: "2rem",
                   marginBottom: "2rem",
                   margin: "2rem",
+                  color: "white",
                 }}
               >
                 <PhoneIcon />

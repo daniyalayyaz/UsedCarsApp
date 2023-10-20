@@ -12,9 +12,7 @@ const CCData = [
   { _id: 4, title: "2000-2500" },
   { _id: 5, title: "2500-3000" },
   { _id: 6, title: "3000-3500" },
-  { _id: 7, title: "3500-4000" },
-  { _id: 8, title: "4000-4500" },
-  { _id: 9, title: "4500-5000" },
+  { _id: 7, title: "over 3500" },
 ];
 
 function DropdownCC({ form, setForm }) {

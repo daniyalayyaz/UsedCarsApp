@@ -7,13 +7,16 @@ export function SolidButton({ onClick, label, btnwidth }) {
       size="small"
       variant="contained"
       sx={{
-        background: "white",
+        background: "primary.main",
         borderRadius: "0.5rem",
         width: btnwidth,
         height: "35px",
-        color: "primary.main",
+        color: "white",
         marginRight: "10px",
         fontFamily: "Semibold",
+        "&:hover ": {
+          color: "#D0AC4C",
+        },
       }}
       onClick={onClick}
     >

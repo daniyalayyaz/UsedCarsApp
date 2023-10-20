@@ -6,6 +6,7 @@ import ContactUsIndex from "../Pages/ContactUs/Index";
 import FAQsIndex from "../Pages/FAQs/Index";
 import CarsListingsIndex from "../Pages/CarsListings/Index";
 import CarDetailIndex from "../Pages/CarDetails/Index";
+import SearchedResultsIndex from "../Pages/SearchResults/Index";
 
 export const router = createBrowserRouter([
   {
@@ -31,5 +32,9 @@ export const router = createBrowserRouter([
   {
     path: PATHS.cardetails,
     element: <CarDetailIndex />,
+  },
+  {
+    path: PATHS.searchResults,
+    element: <SearchedResultsIndex />,
   },
 ]);

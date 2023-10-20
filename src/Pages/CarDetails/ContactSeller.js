@@ -1,4 +1,4 @@
-import { Box, Grid, Stack, TextField, Typography } from "@mui/material";
+import { Box, Button, Grid, Stack, TextField, Typography } from "@mui/material";
 import React, { useState } from "react";
 import { SolidButton } from "../../Components/SolidButton";
 import { toast } from "react-toastify";
@@ -129,7 +129,22 @@ export default function ContactSeller() {
             />
           </Grid>
           <Grid item md={12} xs={12} textAlign="center">
-            <SolidButton label="Submit Now" onClick={handleSubmit} />
+            <Button
+              size="medium"
+              variant="contained"
+              sx={{
+                background: "#D0AC4C",
+                borderRadius: "0.5rem",
+                color: "white",
+                fontFamily: "Semibold",
+                "&:hover ": {
+                  color: "#D0AC4C",
+                },
+              }}
+              onClick={handleSubmit}
+            >
+              Submit Now
+            </Button>
           </Grid>
         </Grid>
       </Box>

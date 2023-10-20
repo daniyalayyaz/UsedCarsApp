@@ -8,10 +8,10 @@ import { IsMobileProvider } from "./contexts/isMobile";
 const theme = createTheme({
   palette: {
     primary: {
-      main: "#4c545c",
+      main: "#000000",
     },
     secondary: {
-      main: "#1a2b43",
+      main: "#D0AC4C",
     },
   },
 });

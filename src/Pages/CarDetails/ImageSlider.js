@@ -78,7 +78,7 @@ function ImageSlider({ data, MultiImages, coverImage }) {
                 src={`https://red-jolly-tortoise.cyclic.app/upload${coverImage}`}
                 width="90%"
                 height="300px"
-                style={{ borderRadius: "8px" }}
+                style={{ objectFit: "cover", borderRadius: "8px" }}
                 alt=""
               />
             </div>
@@ -90,7 +90,7 @@ function ImageSlider({ data, MultiImages, coverImage }) {
                   src={item}
                   width="90%"
                   height="300px"
-                  style={{ borderRadius: "8px" }}
+                  style={{ objectFit: "cover", borderRadius: "8px" }}
                   alt=""
                 />
               </div>
@@ -103,7 +103,7 @@ function ImageSlider({ data, MultiImages, coverImage }) {
             src={require(`../../assets/noImage.jpeg`)}
             width="90%"
             height="300px"
-            style={{ borderRadius: "8px" }}
+            style={{ objectFit: "cover", borderRadius: "8px" }}
             alt=""
           />
         </div>

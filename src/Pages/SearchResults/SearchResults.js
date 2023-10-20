@@ -1,5 +1,5 @@
 import { Container, Grid, Stack, Typography } from "@mui/material";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import CarCard from "../../Components/CarCard";
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
@@ -55,7 +55,7 @@ const CustomNextArrow = (props) => {
   );
 };
 
-export default function FeaturedCars({ isLoading, carsData }) {
+export default function SearchedResults({ isLoading, filteredData }) {
   const settings = {
     dots: false,
     infinite: false,
@@ -90,25 +90,19 @@ export default function FeaturedCars({ isLoading, carsData }) {
     ],
   };
 
-  const [data, setData] = useState([]);
-  useEffect(() => {
-    const filteredCars = carsData.filter((car) => car.featured === true);
-    setData(filteredCars);
-  }, [carsData, isLoading]);
-
   if (isLoading) return <Loader />;
 
   return (
-    <div style={{ backgroundColor: "#000000" }}>
-      <Container sx={{ mt: "2rem", color: "white" }}>
+    <>
+      <Container sx={{ marginTop: "2rem" }}>
         <Stack direction="row" justifyContent="center">
-          <Typography variant="h4" fontWeight="bold" my={4}>
-            Featured Used Cars
+          <Typography variant="h4" fontWeight="bold" marginBottom={6}>
+            Search Results
           </Typography>
         </Stack>
-        {data.length > 0 ? (
+        {filteredData.length > 0 ? (
           <Slider {...settings}>
-            {data.map((item, index) => (
+            {filteredData.map((item, index) => (
               <Grid item key={index}>
                 <CarCard data={item} />
               </Grid>
@@ -126,6 +120,6 @@ export default function FeaturedCars({ isLoading, carsData }) {
           </Typography>
         )}
       </Container>
-    </div>
+    </>
   );
 }

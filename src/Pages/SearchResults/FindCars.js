@@ -1,12 +1,34 @@
-import { Box, Button, Grid, Stack, TextField, Typography } from "@mui/material";
-import React, { useState } from "react";
-import bg from "../../assets/img.avif";
+import { Box, Button, Grid, TextField, Typography } from "@mui/material";
+import React, { useEffect, useState } from "react";
+import bg from "../../assets/image.png";
 import DropdownCountry from "../../Components/DropdownCountry";
 import DropdownPrice from "../../Components/DropdownPrice";
 import { useIsMobile } from "../../contexts/isMobile";
-export default function FindCars({ carsData, setCarsData }) {
+import { priceRangeConverter } from "../../Functions/functions";
+import { toast } from "react-toastify";
+import SearchedResults from "./SearchResults";
+import { GET } from "../../api/axios";
+
+export default function FindCars() {
+  const [carsData, setCarsData] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [filteredData, setFilteredData] = useState([]);
   const bgImg = `url(${bg})`;
   const matches = useIsMobile();
+  const fetchData = async () => {
+    GET("/cars/allcars")
+      .then((result) => {
+        setCarsData(result);
+        setIsLoading(false);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
   const [form, setForm] = useState({
     country: "",
     price: "",
@@ -14,51 +36,44 @@ export default function FindCars({ carsData, setCarsData }) {
   const [searchText, setSearchText] = useState("");
 
   const handleSearchText = (e) => {
-    console.log("handleSearchText called");
     setSearchText(e.target.value);
-    const text = e.target.value.trim().toLowerCase(); // Convert search text to lowercase
+    const text = e.target.value.trim().toLowerCase();
     const filteredCars = carsData.filter((item) =>
       item.name.toLowerCase().includes(text)
     );
-    setCarsData(filteredCars);
-    console.log(filteredCars);
+    setFilteredData(filteredCars);
   };
 
   const handleSearch = (e) => {
     const lowerCaseCountry = form.country.toLowerCase();
 
-    const filteredData = carsData.filter((item) => {
+    const { minPrice, maxPrice } = priceRangeConverter(form.price);
+
+    const data = carsData.filter((item) => {
       const countryMatch = item.country.toLowerCase() === lowerCaseCountry;
-      const priceMatch = item.price === form.price;
+      const priceMatch =
+        parseInt(item?.price) >= minPrice && parseInt(item?.price) <= maxPrice;
 
       return countryMatch || priceMatch;
     });
-    console.log(filteredData, "flterdata");
-
-    setCarsData(filteredData);
+    setFilteredData(data);
+    setForm({ country: "", price: "" });
   };
 
   return (
-    <Stack
-      direction="row"
-      justifyContent="center"
-      sx={{
-        background: bgImg,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        width: "100%",
-        height: "400px",
-        mb: 3,
-      }}
-    >
+    <>
+      {" "}
       <Box
         sx={{
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
-
           width: "100%",
+          background: bgImg,
+          backgroundSize: "100% 100%",
+          backgroundPosition: "center",
+          height: "400px",
         }}
       >
         <Typography
@@ -99,12 +114,15 @@ export default function FindCars({ carsData, setCarsData }) {
                 size="small"
                 variant="contained"
                 sx={{
-                  background: "primary.main",
+                  background: "#D0AC4C",
                   height: "56px",
                   width: "8rem",
                   borderRadius: "0.5rem",
                   color: "white",
                   fontFamily: "Semibold",
+                  "&:hover ": {
+                    color: "#D0AC4C",
+                  },
                 }}
                 onClick={handleSearch}
               >
@@ -114,6 +132,7 @@ export default function FindCars({ carsData, setCarsData }) {
           </Grid>
         </Box>
       </Box>
-    </Stack>
+      <SearchedResults {...{ filteredData, isLoading }} />
+    </>
   );
 }

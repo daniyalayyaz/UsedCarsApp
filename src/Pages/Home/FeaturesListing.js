@@ -7,12 +7,11 @@ export default function FeaturesListing() {
       direction="row"
       justifyContent="center"
       sx={{
-        backgroundColor: "white",
         backgroundSize: "cover",
+        backgroundColor: "white",
         backgroundPosition: "center",
         width: "100%",
         height: "100%",
-        mb: "4rem",
       }}
     >
       <Box
@@ -22,6 +21,7 @@ export default function FeaturesListing() {
           textAlign: "center",
           width: "100%",
           m: "2rem",
+          mb: "4rem",
         }}
       >
         <Grid container spacing={2}>

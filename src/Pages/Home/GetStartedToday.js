@@ -15,21 +15,22 @@ export default function GetStartedToday() {
       direction="row"
       justifyContent="center"
       sx={{
-        backgroundColor: "aliceblue",
+        backgroundColor: "#000000",
         backgroundSize: "cover",
         backgroundPosition: "center",
         width: "100%",
         height: "100%",
-        my: 3,
       }}
     >
       <Box
         sx={{
           display: "flex",
           flexDirection: "column",
+          justifyContent: "center",
           textAlign: "center",
           width: "70%",
           my: "2rem",
+          color: "white",
         }}
       >
         <Typography variant="h4">Get Started Today</Typography>
@@ -43,11 +44,14 @@ export default function GetStartedToday() {
               size="large"
               variant="contained"
               sx={{
-                background: "primary.main",
+                background: "#D0AC4C",
 
                 borderRadius: "0.5rem",
                 color: "white",
                 fontFamily: "Semibold",
+                "&:hover ": {
+                  color: "#D0AC4C",
+                },
               }}
               onClick={() => handleJapenseCar("Japan")}
             >
@@ -59,11 +63,14 @@ export default function GetStartedToday() {
               size="large"
               variant="contained"
               sx={{
-                background: "primary.main",
+                background: "#D0AC4C",
 
                 borderRadius: "0.5rem",
                 color: "white",
                 fontFamily: "Semibold",
+                "&:hover ": {
+                  color: "#D0AC4C",
+                },
               }}
               onClick={() => handleUKCar("UK")}
             >

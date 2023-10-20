@@ -5,7 +5,7 @@ import car from "../../assets/car-inspection.jpg";
 export default function InspectionCard() {
   return (
     <Card
-      elevation={2}
+      elevation={6}
       sx={{
         marginTop: 2,
         display: "flex",
@@ -16,17 +16,20 @@ export default function InspectionCard() {
       <Typography variant="h6" fontWeight="bold" m={2}>
         Car Inspection is Important Before buy a Used Car
       </Typography>
-      <Grid container spacing={2} m={1}>
-        <Grid item md={6} width="90%">
+      <Grid container spacing={2} m={1} mb={3}>
+        <Grid item md={7} width="100%">
           <Typography>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos sunt
-            fugiat iste aperiam numquam similique? Architecto facilis voluptates
-            distinctio aut, ut praesentium saepe iusto impedit repellendus iure
-            porro, dicta exercitationem?
+            Before you drive away with that dream used car, don't forget the
+            crucial pit stop – a thorough car inspection. Your peace of mind
+            starts here! Ensure you're making a smart investment by getting the
+            experts to give it a once-over. Our meticulous inspections reveal
+            hidden secrets and save you from unwanted surprises down the road.
+            Trust us, a little inspection today can protect your joy of driving
+            tomorrow.
           </Typography>
         </Grid>
-        <Grid item md={6}>
-          <img src={car} width={310} alt="" />
+        <Grid item md={5}>
+          <img src={car} width={250} alt="" />
         </Grid>
       </Grid>
     </Card>

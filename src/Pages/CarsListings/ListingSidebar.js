@@ -1,4 +1,4 @@
-import { Box, Grid, Stack, Typography } from "@mui/material";
+import { Box, Button, Grid, Stack, Typography } from "@mui/material";
 import React, { useState } from "react";
 import DropdownMake from "../../Components/DropdownMake";
 import DropdownModel from "../../Components/DropdownModel";
@@ -10,8 +10,14 @@ import DropdownMileage from "../../Components/DropdownMileage";
 import DropdownCC from "../../Components/DropdowmCC";
 import DropdownSteering from "../../Components/DropdownSteering";
 import DropdownFuel from "../../Components/DropdownFuel";
-import DropdownPrice from "../../Components/DropdownPriceRange";
+import DropdownPrice from "../../Components/DropdownPrice";
 import { SolidButton } from "../../Components/SolidButton";
+import {
+  CCRangeConverter,
+  mileageRangeConverter,
+  priceRangeConverter,
+  yearRangeConverter,
+} from "../../Functions/functions";
 
 export default function ListingSidebar({ list, setList }) {
   const [form, setForm] = useState({
@@ -28,19 +34,27 @@ export default function ListingSidebar({ list, setList }) {
     cc: "",
   });
 
-  const [filteredItems, setFilteredItems] = useState(list);
-
   const handleSearch = () => {
+    const { minPrice, maxPrice } = priceRangeConverter(form.price);
+    const { minYear, maxYear } = yearRangeConverter(form.year);
+    const { minMileage, maxMileage } = mileageRangeConverter(form.mileage);
+    const { minCC, maxCC } = CCRangeConverter(form.cc);
+
     const filteredData = list.filter((item) => {
       const makeMatch = item.make === form.make;
       const modelMatch = item.model === form.model;
-      const ccMatch = item.cc === form.cc;
+      const ccMatch =
+        parseInt(item?.cc) >= minCC && parseInt(item?.cc) <= maxCC;
       const transmissionMatch = item.transmission === form.transmission;
       const bodyTypeMatch = item.bodytype === form.bodytype;
       const colorMatch = item.color === form.color;
-      const priceMatch = item.price === form.price;
-      const yearMatch = item.year === form.year;
-      const mileageMatch = item.mileage === form.mileage;
+      const priceMatch =
+        parseInt(item?.price) >= minPrice && parseInt(item?.price) <= maxPrice;
+      const yearMatch =
+        parseInt(item?.year) >= minYear && parseInt(item?.year) <= maxYear;
+      const mileageMatch =
+        parseInt(item?.mileage) >= minMileage &&
+        parseInt(item?.mileage) <= maxMileage;
       const steeringMatch = item.steering === form.steering;
       const fuelMatch = item.fuel === form.fuel;
 
@@ -60,6 +74,7 @@ export default function ListingSidebar({ list, setList }) {
     });
 
     setList(filteredData);
+    console.log(filteredData, "filter");
     setForm({
       make: "",
       model: "",
@@ -96,7 +111,7 @@ export default function ListingSidebar({ list, setList }) {
           my: "1rem",
         }}
       >
-        <Grid container spacing={1}>
+        <Grid container spacing={1} color="white">
           <Grid item md={12} xs={6}>
             <Typography variant="body" fontWeight="bold">
               Make
@@ -173,7 +188,22 @@ export default function ListingSidebar({ list, setList }) {
           </Grid>
 
           <Grid item md={12} xs={12} textAlign="center" mt="1rem">
-            <SolidButton label="Search " onClick={handleSearch} />
+            <Button
+              size="medium"
+              variant="contained"
+              sx={{
+                background: "#D0AC4C",
+                borderRadius: "0.5rem",
+                color: "white",
+                fontFamily: "Semibold",
+                "&:hover ": {
+                  color: "#D0AC4C",
+                },
+              }}
+              onClick={handleSearch}
+            >
+              Search
+            </Button>
           </Grid>
         </Grid>
       </Box>

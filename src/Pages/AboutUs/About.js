@@ -6,14 +6,8 @@ import { useIsMobile } from "../../contexts/isMobile";
 export default function About() {
   const isMobile = useIsMobile();
   return (
-    <Paper elevation={3} sx={{ my: 2, bgcolor: "aliceblue" }}>
-      <Grid
-        container
-        justifyContent="center"
-        alignItems="center"
-        spacing={2}
-        my="1rem"
-      >
+    <Paper elevation={3} sx={{ mt: 2, bgcolor: "white" }}>
+      <Grid container justifyContent="center" alignItems="center" spacing={2}>
         <Grid item md={7} xs={12}>
           <Box px={{ xs: 2, md: 8 }} py={5} lineHeight={1.5}>
             <Typography variant="h3">Our Perfect Platform</Typography>
@@ -40,12 +34,7 @@ export default function About() {
               Our independence means fast decisions and flexibility. If you need
               a vehicle sourced from Japan quickly, or have a unique request, we
               have the autonomy to make it happen for you. You won't get bogged
-              down in bureaucracy like at some bigger competitors. Doctus
-              omnesque duo ne, cu vel offendit erroribus. Laudem hendrerit pro
-              ex, cum postea delectus ad. Te pro feugiat perpetua tractatos. Nam
-              movet omnes id, usu te meis corpora. Augue doming quaestio vix at.
-              Sumo duis ea sed, ut vix euismod lobortis prodesset, everti
-              necessitatibus mei cu.
+              down in bureaucracy like at some bigger competitors.
             </Typography>
             <Typography variant="body1" mt={2}>
               At Bavi Motors, we take pride in our personalized customer care

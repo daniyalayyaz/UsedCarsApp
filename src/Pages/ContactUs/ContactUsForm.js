@@ -43,7 +43,7 @@ export default function ContactUsForm() {
     }
   };
   return (
-    <Card sx={{ width: "100%", height: "100%" }}>
+    <Card elevation={8} sx={{ width: "100%", height: "100%" }}>
       <div
         style={{
           marginTop: "2rem",
@@ -107,15 +107,16 @@ export default function ContactUsForm() {
         </Grid>
         <Grid item md={12} mt={2} xs={12} textAlign="center">
           <Button
-            size="small"
+            size="medium"
             variant="contained"
             sx={{
-              background: "primary.main",
-
+              background: "#D0AC4C",
               borderRadius: "0.5rem",
               color: "white",
-              marginRight: "10px",
               fontFamily: "Semibold",
+              "&:hover ": {
+                color: "#D0AC4C",
+              },
             }}
             onClick={handleSubmit}
           >

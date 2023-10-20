@@ -8,11 +8,10 @@ export default function HappyCustomers() {
       direction="row"
       justifyContent="center"
       sx={{
-        backgroundColor: "aliceblue",
+        backgroundColor: "#fff8e5",
         backgroundSize: "cover",
         backgroundPosition: "center",
         width: "100%",
-        mb: "4rem",
       }}
     >
       <Box

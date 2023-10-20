@@ -24,7 +24,7 @@ export default function CarsList({ list, isLoading }) {
           {list.map((item, index) => (
             <Card
               key={index}
-              elevation={2}
+              elevation={4}
               sx={{
                 marginTop: 2,
                 display: "flex",
@@ -41,6 +41,7 @@ export default function CarsList({ list, isLoading }) {
                       style={{
                         width: isMobile ? "100%" : 130,
                         height: "100%",
+                        objectFit: "cover",
                       }}
                     />
                   ) : (
@@ -50,6 +51,7 @@ export default function CarsList({ list, isLoading }) {
                       style={{
                         width: isMobile ? 120 : 130,
                         height: 120,
+                        objectFit: "cover",
                       }}
                     />
                   )}
@@ -103,10 +105,13 @@ export default function CarsList({ list, isLoading }) {
                     size="small"
                     variant="contained"
                     sx={{
-                      background: "primary.main",
+                      background: "#D0AC4C",
                       borderRadius: "0.5rem",
                       color: "white",
                       fontFamily: "Semibold",
+                      "&:hover ": {
+                        color: "#D0AC4C",
+                      },
                     }}
                     onClick={() => handleDetail(item.country, item._id)}
                   >

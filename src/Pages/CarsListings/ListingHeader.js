@@ -16,7 +16,7 @@ export default function ListingHeader({ heading }) {
           direction="row"
           justifyContent="center"
           sx={{
-            backgroundColor: "aliceblue",
+            backgroundColor: "white",
             backgroundSize: "cover",
             backgroundPosition: "center",
             width: "100%",
