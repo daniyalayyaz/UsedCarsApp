@@ -19,14 +19,7 @@ export default function CarDetailIndex() {
   const fetchData = async () => {
     GETID(`/cars/${id}`).then((result) => {
       setData(result);
-      if (result && typeof result.multipleimages === "string") {
-        setIsLoading(false);
-        const imageData = JSON.parse(result?.multipleimages || []);
-        setImagesArray(Object.values(imageData));
-      } else {
-        setIsLoading(false);
-        setImagesArray([]);
-      }
+      setIsLoading(false);
     });
   };
 
@@ -45,7 +38,7 @@ export default function CarDetailIndex() {
           <Container>
             <Grid container my={4}>
               <Grid item md={8} xs={12}>
-                <CarDetails data={data} imagesArray={imagesArray} />
+                <CarDetails data={data} />
               </Grid>
               <Grid item md={4} xs={12}>
                 <PriceCard price={data.price} country={data.country} />
@@ -55,9 +48,11 @@ export default function CarDetailIndex() {
           </Container>
         </>
       ) : (
-        <>
-          <Typography>No Data Found</Typography>
-        </>
+        <Grid item container spacing={2} justifyContent="center" my={"7.7rem"}>
+          <Typography variant="h6" fontWeight="bold">
+            No Data Found
+          </Typography>
+        </Grid>
       )}
       <Footer />
     </div>

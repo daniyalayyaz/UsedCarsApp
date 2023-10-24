@@ -4,7 +4,7 @@ import InspectionCard from "./InspectionCard";
 import ImageSlider from "./ImageSlider";
 import { useIsMobile } from "../../contexts/isMobile";
 
-export default function CarDetails({ data, imagesArray }) {
+export default function CarDetails({ data }) {
   const isMobile = useIsMobile();
   return (
     <Stack
@@ -25,11 +25,7 @@ export default function CarDetails({ data, imagesArray }) {
           my: "1rem",
         }}
       >
-        <ImageSlider
-          data={data.multipleimages}
-          MultiImages={imagesArray}
-          coverImage={data.coverImage}
-        />
+        <ImageSlider data={data.multipleimages} coverImage={data.coverImage} />
         <Grid container my={5}>
           <Typography variant="h5" fontWeight="bold">
             About this Car

@@ -1,6 +1,5 @@
 import { Box, Button, Grid, Stack, TextField, Typography } from "@mui/material";
 import React, { useState } from "react";
-import { SolidButton } from "../../Components/SolidButton";
 import { toast } from "react-toastify";
 import { POST } from "../../api/axios";
 

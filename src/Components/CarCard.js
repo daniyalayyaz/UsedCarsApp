@@ -31,7 +31,8 @@ export default function CarCard({ data }) {
         <CardMedia
           component="img"
           height="200"
-          src={`https://red-jolly-tortoise.cyclic.app/upload${data.coverImage}`}
+          // src={`http://localhost:5000/upload${data.coverImage}`}
+          src={`https://giant-gray-lovebird.cyclic.app/upload${data.coverImage}`}
           alt="Image Alt Text"
           sx={{ objectFit: "cover" }}
         />

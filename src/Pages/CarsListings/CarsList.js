@@ -36,7 +36,8 @@ export default function CarsList({ list, isLoading }) {
                 <Grid item md={2} xs={10} justifyContent="center">
                   {item.coverImage ? (
                     <img
-                      src={`https://red-jolly-tortoise.cyclic.app/upload${item.coverImage}`}
+                      // src={`http://localhost:5000/upload${item.coverImage}`}
+                      src={`https://giant-gray-lovebird.cyclic.app/upload${item.coverImage}`}
                       alt="Logo"
                       style={{
                         width: isMobile ? "100%" : 130,

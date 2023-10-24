@@ -53,7 +53,7 @@ const CustomNextArrow = (props) => {
   );
 };
 
-function ImageSlider({ data, MultiImages, coverImage }) {
+function ImageSlider({ data, coverImage }) {
   const isMobile = useIsMobile();
   const [settings] = useState({
     dots: true,
@@ -77,7 +77,8 @@ function ImageSlider({ data, MultiImages, coverImage }) {
           <div>
             <div style={{ display: "flex", justifyContent: "center" }}>
               <img
-                src={`https://red-jolly-tortoise.cyclic.app/upload${coverImage}`}
+                src={`https://giant-gray-lovebird.cyclic.app/upload${coverImage}`}
+                // src={`http://localhost:5000/upload${coverImage}`}
                 width="90%"
                 height="300px"
                 style={{ objectFit: "cover", borderRadius: "8px" }}
@@ -85,11 +86,12 @@ function ImageSlider({ data, MultiImages, coverImage }) {
               />
             </div>
           </div>
-          {MultiImages.map((item) => (
+          {data?.map((item) => (
             <div>
               <div style={{ display: "flex", justifyContent: "center" }}>
                 <img
-                  src={item}
+                  // src={`http://localhost:5000/upload/files/${item}`}
+                  src={`https://giant-gray-lovebird.cyclic.app/upload/files/${item}`}
                   width="90%"
                   height="300px"
                   style={{ objectFit: "cover", borderRadius: "8px" }}
