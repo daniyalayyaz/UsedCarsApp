@@ -28,13 +28,13 @@ function DropdownMileage({ form, setForm }) {
       }}
     >
       <FormControl fullWidth>
-        <InputLabel htmlFor="demo-simple-select">Select </InputLabel>
+        <InputLabel htmlFor="demo-simple-select">Select Mileage</InputLabel>
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
           name="mileage"
           value={form.mileage}
-          label="Mileage"
+          label="Select Mileage"
           onChange={handleChange}
           sx={{ height: 40 }}
         >

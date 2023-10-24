@@ -29,13 +29,13 @@ function DropdownFuel({ form, setForm }) {
       }}
     >
       <FormControl fullWidth>
-        <InputLabel htmlFor="demo-simple-select">Select </InputLabel>
+        <InputLabel htmlFor="demo-simple-select">Select Fuel Type</InputLabel>
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
           name="fuel"
           value={form.fuel}
-          label="Fuel"
+          label="Select Fuel Type"
           onChange={handleChange}
           sx={{ height: 40 }}
         >

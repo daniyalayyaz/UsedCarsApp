@@ -27,13 +27,13 @@ function DropdownColor({ form, setForm }) {
       }}
     >
       <FormControl fullWidth>
-        <InputLabel htmlFor="demo-simple-select">Select </InputLabel>
+        <InputLabel htmlFor="demo-simple-select">Select Color</InputLabel>
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
           name="color"
           value={form.color}
-          label="Color"
+          label="Select Color"
           onChange={handleChange}
           sx={{ height: 40 }}
         >

@@ -24,13 +24,15 @@ function DropdownTransmission({ form, setForm }) {
       }}
     >
       <FormControl fullWidth>
-        <InputLabel htmlFor="demo-simple-select">Select </InputLabel>
+        <InputLabel htmlFor="demo-simple-select">
+          Select Transmission
+        </InputLabel>
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
           name="transmission"
           value={form.transmission}
-          label="Transmission"
+          label="Select Transmission"
           onChange={handleChange}
           sx={{ height: 40 }}
         >

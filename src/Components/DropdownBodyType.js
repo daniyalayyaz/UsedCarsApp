@@ -29,13 +29,13 @@ function DropdownBodyType({ form, setForm }) {
       }}
     >
       <FormControl fullWidth>
-        <InputLabel htmlFor="demo-simple-select">Select </InputLabel>
+        <InputLabel htmlFor="demo-simple-select">Select BodyType</InputLabel>
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
           name="bodytype"
           value={form.bodytype}
-          label="BodyType"
+          label="Select BodyType"
           onChange={handleChange}
           sx={{ height: 40 }}
         >

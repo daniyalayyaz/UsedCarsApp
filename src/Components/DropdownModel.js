@@ -29,13 +29,13 @@ function DropdownModel({ form, setForm }) {
       }}
     >
       <FormControl fullWidth>
-        <InputLabel htmlFor="demo-simple-select">Select </InputLabel>
+        <InputLabel htmlFor="demo-simple-select">Select Model</InputLabel>
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
           name="model"
           value={form.model}
-          label="Model"
+          label="Select Model"
           onChange={handleChange}
           sx={{ height: 40 }}
         >

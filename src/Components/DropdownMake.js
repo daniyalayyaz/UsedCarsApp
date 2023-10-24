@@ -44,13 +44,13 @@ function DropdownMake({ form, setForm }) {
       }}
     >
       <FormControl fullWidth>
-        <InputLabel htmlFor="demo-simple-select">Select </InputLabel>
+        <InputLabel htmlFor="demo-simple-select">Select Make</InputLabel>
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
           name="make"
           value={form.make}
-          label="Make"
+          label="Select Make"
           onChange={handleChange}
           sx={{ height: 40 }}
         >

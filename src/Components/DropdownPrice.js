@@ -35,7 +35,7 @@ function DropdownPrice({ form, setForm }) {
           id="demo-simple-select"
           name="price"
           value={form.price}
-          label="Price"
+          label="Select Price "
           onChange={handleChange}
         >
           {PriceData.map((values) => (

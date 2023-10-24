@@ -31,13 +31,13 @@ function DropdownYear({ form, setForm }) {
       }}
     >
       <FormControl fullWidth>
-        <InputLabel htmlFor="demo-simple-select">Select </InputLabel>
+        <InputLabel htmlFor="demo-simple-select">Select Year</InputLabel>
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
           name="year"
           value={form.year}
-          label="Year"
+          label="Select Year"
           onChange={handleChange}
           sx={{ height: 40 }}
         >

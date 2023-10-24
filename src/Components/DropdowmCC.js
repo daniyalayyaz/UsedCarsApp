@@ -30,13 +30,13 @@ function DropdownCC({ form, setForm }) {
       }}
     >
       <FormControl fullWidth>
-        <InputLabel htmlFor="demo-simple-select">Select </InputLabel>
+        <InputLabel htmlFor="demo-simple-select">Select CC</InputLabel>
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
           name="cc"
           value={form.cc}
-          label="CC"
+          label="Select CC"
           onChange={handleChange}
           sx={{ height: 40 }}
         >

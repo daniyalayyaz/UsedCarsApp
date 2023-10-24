@@ -25,13 +25,13 @@ function DropdownSteering({ form, setForm }) {
       }}
     >
       <FormControl fullWidth>
-        <InputLabel htmlFor="demo-simple-select">Select </InputLabel>
+        <InputLabel htmlFor="demo-simple-select">Select Steering</InputLabel>
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
           name="steering"
           value={form.steering}
-          label="Steering"
+          label="Select Steering"
           onChange={handleChange}
           sx={{ height: 40 }}
         >
