@@ -37,7 +37,7 @@ export default function CarsList({ list, isLoading }) {
                   {item.coverImage ? (
                     <img
                       // src={`http://localhost:5000/upload${item.coverImage}`}
-                      src={`https://giant-gray-lovebird.cyclic.app/upload${item.coverImage}`}
+                      src={item.coverImage}
                       alt="Logo"
                       style={{
                         width: isMobile ? "100%" : 130,

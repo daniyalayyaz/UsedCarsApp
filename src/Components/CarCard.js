@@ -32,7 +32,7 @@ export default function CarCard({ data }) {
           component="img"
           height="200"
           // src={`http://localhost:5000/upload${data.coverImage}`}
-          src={`https://giant-gray-lovebird.cyclic.app/upload${data.coverImage}`}
+          src={data.coverImage}
           alt="Image Alt Text"
           sx={{ objectFit: "cover" }}
         />
