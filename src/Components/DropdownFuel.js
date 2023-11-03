@@ -1,23 +1,26 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Box from "@mui/material/Box";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
-
-const FuelData = [
-  { _id: 1, title: "Diesel" },
-  { _id: 2, title: "LPG" },
-  { _id: 3, title: "Gasoline" },
-  { _id: 4, title: "Petrol" },
-  { _id: 5, title: "Hybrid" },
-  { _id: 6, title: "Electric" },
-];
+import { GET } from "../api/axios";
 
 function DropdownFuel({ form, setForm }) {
+  const [Fuel, setFuel] = useState([]);
+  const fetchData = () => {
+    GET("/dropdown/fuel").then((result) => {
+      setFuel(result);
+    });
+  };
+
   const handleChange = (e) => {
     setForm((form) => ({ ...form, [e.target.name]: e.target.value }));
   };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
 
   return (
     <Box
@@ -39,7 +42,7 @@ function DropdownFuel({ form, setForm }) {
           onChange={handleChange}
           sx={{ height: 40 }}
         >
-          {FuelData.map((values) => (
+          {Fuel.map((values) => (
             <MenuItem key={values._id} value={values.title}>
               {values.title}
             </MenuItem>

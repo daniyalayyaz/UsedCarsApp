@@ -8,6 +8,7 @@ import Select from "@mui/material/Select";
 const TransmissionData = [
   { _id: 1, title: "Automatic" },
   { _id: 2, title: "Manual" },
+  { _id: 3, title: "Hybrid" },
 ];
 
 function DropdownTransmission({ form, setForm }) {

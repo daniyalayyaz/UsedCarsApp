@@ -1,23 +1,26 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Box from "@mui/material/Box";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
-
-const ModelData = [
-  { _id: 1, title: "Corola AXIO" },
-  { _id: 2, title: "Yaris" },
-  { _id: 2, title: "Yaris Hybrid" },
-  { _id: 2, title: "Yaris Cross" },
-  { _id: 2, title: "VITZ" },
-  { _id: 2, title: "VITZ Hybrid" },
-];
+import { GET } from "../api/axios";
 
 function DropdownModel({ form, setForm }) {
+  const [ModelData, setModelData] = useState([]);
+  const fetchData = () => {
+    GET("/dropdown/model").then((result) => {
+      setModelData(result);
+    });
+  };
+
   const handleChange = (e) => {
     setForm((form) => ({ ...form, [e.target.name]: e.target.value }));
   };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
 
   return (
     <Box

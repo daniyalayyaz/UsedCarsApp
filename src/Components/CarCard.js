@@ -31,7 +31,6 @@ export default function CarCard({ data }) {
         <CardMedia
           component="img"
           height="200"
-          // src={`http://localhost:5000/upload${data.coverImage}`}
           src={data.coverImage}
           alt="Image Alt Text"
           sx={{ objectFit: "cover" }}

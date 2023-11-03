@@ -36,7 +36,6 @@ export default function CarsList({ list, isLoading }) {
                 <Grid item md={2} xs={10} justifyContent="center">
                   {item.coverImage ? (
                     <img
-                      // src={`http://localhost:5000/upload${item.coverImage}`}
                       src={item.coverImage}
                       alt="Logo"
                       style={{

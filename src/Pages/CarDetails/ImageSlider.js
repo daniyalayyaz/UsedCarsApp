@@ -78,7 +78,6 @@ function ImageSlider({ data, coverImage }) {
             <div style={{ display: "flex", justifyContent: "center" }}>
               <img
                 src={coverImage}
-                // src={`http://localhost:5000/upload${coverImage}`}
                 width="90%"
                 height="300px"
                 style={{ objectFit: "cover", borderRadius: "8px" }}
@@ -90,7 +89,6 @@ function ImageSlider({ data, coverImage }) {
             <div>
               <div style={{ display: "flex", justifyContent: "center" }}>
                 <img
-                  // src={`http://localhost:5000/upload/files/${item}`}
                   src={item}
                   width="90%"
                   height="300px"

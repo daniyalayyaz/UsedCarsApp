@@ -1,23 +1,25 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Box from "@mui/material/Box";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
-
-const BodyTypeData = [
-  { _id: 1, title: "Convertible" },
-  { _id: 2, title: "Sedan" },
-  { _id: 3, title: "Van" },
-  { _id: 4, title: "Truck" },
-  { _id: 5, title: "Wagon" },
-  { _id: 6, title: "Coupe" },
-];
+import { GET } from "../api/axios";
 
 function DropdownBodyType({ form, setForm }) {
+  const [BodyType, setBodyType] = useState([]);
+  const fetchData = () => {
+    GET("/dropdown/bodytype").then((result) => {
+      setBodyType(result);
+    });
+  };
   const handleChange = (e) => {
     setForm((form) => ({ ...form, [e.target.name]: e.target.value }));
   };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
 
   return (
     <Box
@@ -39,7 +41,7 @@ function DropdownBodyType({ form, setForm }) {
           onChange={handleChange}
           sx={{ height: 40 }}
         >
-          {BodyTypeData.map((values) => (
+          {BodyType.map((values) => (
             <MenuItem key={values._id} value={values.title}>
               {values.title}
             </MenuItem>
